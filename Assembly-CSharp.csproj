@@ -45,10 +45,7 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Say2.cs" />
-     <Compile Include="Assets\SetCameraColor.cs" />
-     <Compile Include="Assets\WaitAndAdvance.cs" />
-     <Compile Include="Assets\timerScript.cs" />
+     <Compile Include="Assets\Scripts\timer.cs" />
  <Reference Include="UnityEngine">
  <HintPath>D:/Program Files/Unity/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
