@@ -255,9 +255,6 @@ GameObject:
   - component: {fileID: 202468168}
   - component: {fileID: 202468167}
   - component: {fileID: 202468180}
-  - component: {fileID: 202468179}
-  - component: {fileID: 202468178}
-  - component: {fileID: 202468177}
   - component: {fileID: 202468176}
   - component: {fileID: 202468175}
   - component: {fileID: 202468185}
@@ -265,7 +262,6 @@ GameObject:
   - component: {fileID: 202468183}
   - component: {fileID: 202468182}
   - component: {fileID: 202468181}
-  - component: {fileID: 202468186}
   - component: {fileID: 202468205}
   - component: {fileID: 202468204}
   - component: {fileID: 202468203}
@@ -468,10 +464,8 @@ MonoBehaviour:
     y: -340
     width: 1114
     height: 859
-  selectedBlocks:
-  - {fileID: 202468168}
-  selectedCommands:
-  - {fileID: 202468195}
+  selectedBlocks: []
+  selectedCommands: []
   variables:
   - {fileID: 202468176}
   - {fileID: 202468175}
@@ -557,88 +551,6 @@ MonoBehaviour:
   scope: 0
   key: MarisaExpression
   value: HAPPY
---- !u!114 &202468177
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202468166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 213800910929c6e4391d84e2a8522ddd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 31
-  indentLevel: 0
-  storyText: '{x}'
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 1
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
-  expression: 0
---- !u!114 &202468178
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202468166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 681
-    y: 162
-    width: 133
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 30
-  blockName: PatchySayEnd
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 202468186}
-  suppressAllAutoSelections: 0
---- !u!114 &202468179
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202468166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d3d73aef2cfc4f51abf34ac00241f60, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nodeRect:
-    serializedVersion: 2
-    x: 529
-    y: 162
-    width: 131
-    height: 40
-  tint: {r: 1, g: 1, b: 1, a: 1}
-  useCustomTint: 0
-  itemId: 29
-  blockName: MarisaSayEnd
-  description: 
-  eventHandler: {fileID: 0}
-  commandList:
-  - {fileID: 202468177}
-  suppressAllAutoSelections: 0
 --- !u!114 &202468180
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -872,34 +784,6 @@ MonoBehaviour:
   vector3Data:
     vector3Ref: {fileID: 0}
     vector3Val: {x: 0, y: 0, z: 0}
---- !u!114 &202468186
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 202468166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13bdc8a1d9249154a9ff00236378e740, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 37
-  indentLevel: 0
-  storyText: '{x}'
-  description: 
-  character: {fileID: 0}
-  portrait: {fileID: 0}
-  voiceOverClip: {fileID: 0}
-  showAlways: 1
-  showCount: 1
-  extendPrevious: 1
-  fadeWhenDone: 1
-  waitForClick: 1
-  stopVoiceover: 1
-  waitForVO: 0
-  setSayDialog: {fileID: 0}
-  expression: 0
 --- !u!114 &202468187
 MonoBehaviour:
   m_ObjectHideFlags: 2

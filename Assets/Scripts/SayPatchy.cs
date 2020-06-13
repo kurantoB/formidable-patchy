@@ -57,6 +57,6 @@ public class SayPatchy : Say
 
     private void PatchyMessageExit()
     {
-        GetFlowchart().ExecuteBlock("PatchySayEnd");
+        Continue();
     }
 }

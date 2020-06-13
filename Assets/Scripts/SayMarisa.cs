@@ -48,6 +48,6 @@ public class SayMarisa : Say
 
     private void MarisaMessageExit()
     {
-        GetFlowchart().ExecuteBlock("MarisaSayEnd");
+        Continue();
     }
 }
