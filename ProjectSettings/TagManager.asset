@@ -6,6 +6,7 @@ TagManager:
   tags:
   - MarisaCharacter
   - MessageTimer
+  - PatchyCharacter
   layers:
   - Default
   - TransparentFX

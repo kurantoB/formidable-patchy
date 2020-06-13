@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Fungus;
 
 //quick and messy timer for Formidable Alice mechanics
 //probably get rid of logs when timer works 
@@ -16,22 +15,28 @@ public class timer : MonoBehaviour
 
     public bool timerRunning = false;
 
-    public Command cmd;
+    public delegate void MessageExit();
+    private MessageExit msgExit;
 
     void Update()
     {
-        if(timerRunning){
+        if (timerRunning)
+        {
             timeLeft -= Time.deltaTime;
-            progressCircle.fillAmount = timeLeft/maxTime;
-            if(timeLeft >=0){
+            progressCircle.fillAmount = timeLeft / maxTime;
+            if (timeLeft >= 0)
+            {
                 timerText.text = System.Math.Round(timeLeft, 2).ToString();
-            }else{
+            }
+            else
+            {
                 timerText.text = "0.00";
             }
-        
-            
-            if(timeLeft <= 0){
-                cmd.Continue();
+
+
+            if (timeLeft <= 0)
+            {
+                msgExit();
                 Debug.Log("timer over");
                 timerRunning = false;
             }
@@ -39,16 +44,18 @@ public class timer : MonoBehaviour
     }
 
     //resets timer, called by Fungus when dialogue has advanced
-    public void timerReset(Command command){
-        Debug.Log("reset");   
+    public void timerReset(MessageExit msgExit)
+    {
+        Debug.Log("reset");
         timerRunning = false;
         maxTime = 0f;
         timeLeft = 0f;
-        this.cmd = command;
+        this.msgExit = msgExit;
     }
 
     //starts timer, called by Fungus when done typing
-    public void timerStart(float messageTime){
+    public void timerStart(float messageTime)
+    {
         maxTime = messageTime;
         timeLeft = messageTime;
         Debug.Log("timer start");
