@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -484,9 +484,8 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 202468180}
-  selectedCommands:
-  - {fileID: 202468182}
+  - {fileID: 202468179}
+  selectedCommands: []
   variables:
   - {fileID: 202468176}
   - {fileID: 202468175}
@@ -1511,7 +1510,7 @@ MonoBehaviour:
   nodeRect:
     serializedVersion: 2
     x: 550
-    y: 177
+    y: 178
     width: 158
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
@@ -3067,7 +3066,7 @@ GameObject:
   - component: {fileID: 795662585}
   m_Layer: 0
   m_Name: Subterranean Animism
-  m_TagString: Untagged
+  m_TagString: TopicButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3191,7 +3190,7 @@ GameObject:
   - component: {fileID: 804776610}
   m_Layer: 0
   m_Name: Becoming a Youkai
-  m_TagString: Untagged
+  m_TagString: TopicButton
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4001,6 +4000,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1564141545}
   m_CullTransparentMesh: 0
+--- !u!1 &1678586035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1678586036}
+  - component: {fileID: 1678586037}
+  m_Layer: 0
+  m_Name: TopicManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1678586036
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678586035}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 176.35555, y: 112.060165, z: 483.25}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1678586037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1678586035}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 505cd197bbbc0954ab69e6fc7bcffdae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topics: []
+  topicSpawnTime: 5
 --- !u!1 &2085182357
 GameObject:
   m_ObjectHideFlags: 0
