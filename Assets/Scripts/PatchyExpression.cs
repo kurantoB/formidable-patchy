@@ -1,4 +1,4 @@
 ﻿public enum PatchyExpression
 {
-    NEUTRAL, HAPPY
+    NEUTRAL, HAPPY, PATCHYSPLAINING, LAMENTING, FLUSTERED, MIFFED
 }

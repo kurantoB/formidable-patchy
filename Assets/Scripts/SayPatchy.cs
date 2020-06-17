@@ -27,6 +27,18 @@ public class SayPatchy : Say
             case PatchyExpression.HAPPY:
                 GetFlowchart().SetStringVariable("PatchyExpression", "HAPPY");
                 break;
+            case PatchyExpression.PATCHYSPLAINING:
+                GetFlowchart().SetStringVariable("PatchyExpression", "PATCHYSPLAINING");
+                break;
+            case PatchyExpression.LAMENTING:
+                GetFlowchart().SetStringVariable("PatchyExpression", "LAMENTING");
+                break;
+            case PatchyExpression.FLUSTERED:
+                GetFlowchart().SetStringVariable("PatchyExpression", "FLUSTERED");
+                break;
+            case PatchyExpression.MIFFED:
+                GetFlowchart().SetStringVariable("PatchyExpression", "MIFFED");
+                break;
         }
         GetFlowchart().ExecuteBlock("PatchyPortrait");
 
