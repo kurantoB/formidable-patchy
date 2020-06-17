@@ -33,8 +33,8 @@ public class SayPatchy : Say
         float waitTime = storyText.Length > 70 ? 9 : 4;
         timer tmr = GameObject.FindGameObjectWithTag("MessageTimer").GetComponent<timer>();
         tmr.timerReset(PatchyMessageExit);
-        base.OnEnter();
         tmr.timerStart(waitTime);
+        base.OnEnter();
     }
 
     public override string GetSummary()
@@ -57,6 +57,16 @@ public class SayPatchy : Say
 
     private void PatchyMessageExit()
     {
-        Continue();
+        GameObject.FindObjectOfType<GameFlow>().HandleContinue(this, BaseContinue);
+    }
+
+    public override void Continue()
+    {
+        GameObject.FindObjectOfType<GameFlow>().HandleContinue(this, BaseContinue);
+    }
+
+    private void BaseContinue()
+    {
+        base.Continue();
     }
 }

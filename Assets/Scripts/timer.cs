@@ -42,6 +42,7 @@ public class timer : MonoBehaviour
 
     public void timerReset(MessageExit msgExit)
     {
+        Debug.Log("timerReset");
         timerRunning = false;
         maxTime = 0f;
         timeLeft = 0f;
@@ -50,6 +51,7 @@ public class timer : MonoBehaviour
 
     public void timerStart(float messageTime)
     {
+        Debug.Log("timerStart");
         maxTime = messageTime;
         timeLeft = messageTime;
         timerRunning = true;

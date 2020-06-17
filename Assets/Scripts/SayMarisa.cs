@@ -11,19 +11,14 @@ public class SayMarisa : Say
     public MarisaExpression expression;
     public override void OnEnter()
     {
-        if (storyText.Equals("{x}"))
-        {
-            base.OnEnter();
-            return;
-        }
         character = GameObject.FindGameObjectWithTag("MarisaCharacter").GetComponent<Character>();
         portrait = GetCharacterPortrait();
         character.SetSayDialog.CharacterImage.CrossFadeAlpha(1, 0.25f, true);
         float waitTime = storyText.Length > 70 ? 9 : 4;
         timer tmr = GameObject.FindGameObjectWithTag("MessageTimer").GetComponent<timer>();
         tmr.timerReset(MarisaMessageExit);
-        base.OnEnter();
         tmr.timerStart(waitTime);
+        base.OnEnter();
     }
 
     public override string GetSummary()
@@ -48,6 +43,16 @@ public class SayMarisa : Say
 
     private void MarisaMessageExit()
     {
-        Continue();
+        GameObject.FindObjectOfType<GameFlow>().HandleContinue(this, BaseContinue);
+    }
+
+    public override void Continue()
+    {
+        GameObject.FindObjectOfType<GameFlow>().HandleContinue(this, BaseContinue);
+    }
+
+    private void BaseContinue()
+    {
+        base.Continue();
     }
 }

@@ -63,10 +63,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\GameFlow.cs" />
     <Compile Include="Assets\Scripts\MarisaExpression.cs" />
     <Compile Include="Assets\Scripts\PatchyExpression.cs" />
     <Compile Include="Assets\Scripts\SayMarisa.cs" />
     <Compile Include="Assets\Scripts\SayPatchy.cs" />
+    <Compile Include="Assets\Scripts\TopicManager.cs" />
     <Compile Include="Assets\Scripts\timer.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Dennis/GameDev/formidable-patchy/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
