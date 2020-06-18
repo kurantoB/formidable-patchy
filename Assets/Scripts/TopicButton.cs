@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class TopicButton : MonoBehaviour
 {
     private RectTransform  rectTransform;
-    public float yPos = -95;
+    private float yPos = -95;
     public int speed;
     // Start is called before the first frame update
     void Start()
