@@ -17,6 +17,7 @@ public class GameFlow : MonoBehaviour
         // clear the topic scrolling list
 
         flowChart.SetStringVariable("NextBlock", topic);
+        flowChart.SetBooleanVariable("PatchyInitiated", false);
     }
 
     public void HandleContinue(Say sayCommand, BaseContinue bc)
@@ -37,5 +38,13 @@ public class GameFlow : MonoBehaviour
         {
             bc();
         }
+    }
+
+    public void PatchyTopicChange()
+    {
+        string nextBlock = "Becoming a Youkai";
+        flowChart.SetBooleanVariable("PatchyInitiated", true);
+        flowChart.ExecuteBlock(nextBlock);
+        flowChart.SetStringVariable("NextBlock", "Empty");
     }
 }
