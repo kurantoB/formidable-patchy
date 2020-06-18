@@ -44,8 +44,7 @@ public class SayPatchy : Say
 
         float waitTime = storyText.Length > 70 ? 9 : 4;
         timer tmr = GameObject.FindGameObjectWithTag("MessageTimer").GetComponent<timer>();
-        tmr.timerReset(PatchyMessageExit);
-        tmr.timerStart(waitTime);
+        tmr.timerReset(waitTime, PatchyMessageExit);
         base.OnEnter();
     }
 

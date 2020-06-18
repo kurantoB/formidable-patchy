@@ -16,8 +16,7 @@ public class SayMarisa : Say
         character.SetSayDialog.CharacterImage.CrossFadeAlpha(1, 0.25f, true);
         float waitTime = storyText.Length > 70 ? 9 : 4;
         timer tmr = GameObject.FindGameObjectWithTag("MessageTimer").GetComponent<timer>();
-        tmr.timerReset(MarisaMessageExit);
-        tmr.timerStart(waitTime);
+        tmr.timerReset(waitTime, MarisaMessageExit);
         base.OnEnter();
     }
 

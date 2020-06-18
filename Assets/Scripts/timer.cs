@@ -11,49 +11,34 @@ public class timer : MonoBehaviour
 
     public Image progressCircle;
 
-    public bool timerRunning = false;
-
     public delegate void MessageExit();
     private MessageExit msgExit;
 
     void Update()
     {
-        if (timerRunning)
+        timeLeft -= Time.deltaTime;
+        progressCircle.fillAmount = timeLeft / maxTime;
+        if (timeLeft >= 0)
         {
-            timeLeft -= Time.deltaTime;
-            progressCircle.fillAmount = timeLeft / maxTime;
-            if (timeLeft >= 0)
-            {
-                timerText.text = System.Math.Round(timeLeft, 2).ToString();
-            }
-            else
-            {
-                timerText.text = "0.00";
-            }
-
-
-            if (timeLeft <= 0)
-            {
-                msgExit();
-                timerRunning = false;
-            }
+            timerText.text = System.Math.Round(timeLeft, 2).ToString();
         }
-    }
+        else
+        {
+            timerText.text = "0.00";
+        }
 
-    public void timerReset(MessageExit msgExit)
+
+        if (timeLeft <= 0)
+        {
+            msgExit();
+        }
+}
+
+    public void timerReset(float messageTime, MessageExit msgExit)
     {
         Debug.Log("timerReset");
-        timerRunning = false;
-        maxTime = 0f;
-        timeLeft = 0f;
         this.msgExit = msgExit;
-    }
-
-    public void timerStart(float messageTime)
-    {
-        Debug.Log("timerStart");
         maxTime = messageTime;
         timeLeft = messageTime;
-        timerRunning = true;
     }
 }
