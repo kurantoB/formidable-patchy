@@ -4,11 +4,13 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class TopicButton : MonoBehaviour
+
 {
     // Upon spawning, button will move upwards until it hits a certain height, where it will delete itself
     private RectTransform  rectTransform;
     private float yPos = -95;
     public int speed;
+    public string goToTopic;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +26,9 @@ public class TopicButton : MonoBehaviour
         if(yPos >= 70){
             Destroy(gameObject);
         }
+    }
+
+    public void topicButtonClicked() {
+        GameObject.FindGameObjectWithTag("GameFlow").GetComponent<GameFlow>().ChangeTopic(goToTopic);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 public class TopicManager : MonoBehaviour
 {
     // Array with all topic GameObjects
-    public GameObject[] topics; 
+    public GameObject[] topics;
 
     public float topicSpawnTime;
     private float topicTimeLeft;
@@ -22,7 +22,7 @@ public class TopicManager : MonoBehaviour
     void Start()
     {
         // Get array of all GameObjects with TopicButton tag to spawn later
-        topics = GameObject.FindGameObjectsWithTag("TopicButton");
+        //topics = GameObject.FindGameObjectsWithTag("TopicButton");
         topicTimeLeft = topicSpawnTime;
 
         // Set every original topic button false so they won't move up and delete themselves

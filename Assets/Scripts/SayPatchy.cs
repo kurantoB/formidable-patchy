@@ -39,6 +39,12 @@ public class SayPatchy : Say
             case PatchyExpression.MIFFED:
                 GetFlowchart().SetStringVariable("PatchyExpression", "MIFFED");
                 break;
+            case PatchyExpression.READING:
+                GetFlowchart().SetStringVariable("PatchyExpression", "READING");
+                break;
+            case PatchyExpression.DOKIDOKI:
+                GetFlowchart().SetStringVariable("PatchyExpression", "DOKIDOKI");
+                break;
         }
         GetFlowchart().ExecuteBlock("PatchyPortrait");
 
