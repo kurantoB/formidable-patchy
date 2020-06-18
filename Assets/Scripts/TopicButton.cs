@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class TopicButton : MonoBehaviour
 {
+    // Upon spawning, button will move upwards until it hits a certain height, where it will delete itself
     private RectTransform  rectTransform;
     private float yPos = -95;
     public int speed;
