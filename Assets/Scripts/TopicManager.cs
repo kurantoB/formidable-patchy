@@ -75,6 +75,18 @@ public class TopicManager : MonoBehaviour
     public void Visited(string topicName){
         Debug.Log(topicName);
 
+        switch(topicName){
+            case "Becoming a Youkai":
+                Debug.Log("yokai");
+                break;
+
+            case "Subterranean Animism":
+                Debug.Log("SA");
+                break;
+
+            default:
+                break;
+        }
         //make switch statement, enable spawning of real talk version of topics
     }
 
@@ -86,7 +98,11 @@ public class TopicManager : MonoBehaviour
 
     public void ClearTopicRoll()
     {
-        // clear the scrolling topic list
+        Debug.Log("clear topics");
+
+        foreach (GameObject topic in GameObject.FindGameObjectsWithTag("TopicButton")){
+            Destroy(topic);
+        }
     }
 
     public void ActivateTopicRoll()
