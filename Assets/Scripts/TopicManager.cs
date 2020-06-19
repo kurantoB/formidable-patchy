@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,7 +14,7 @@ public class TopicManager : MonoBehaviour
 
     // Can use to stop timer, will probably need later 
     bool timerRunning = true;
-    
+
     // Canvas where topic buttons are drawn
     public GameObject parentCanvas;
 
@@ -39,6 +40,7 @@ public class TopicManager : MonoBehaviour
             }
         }
     }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,7 +63,7 @@ public class TopicManager : MonoBehaviour
             if (topicTimeLeft <= 0)
             {
                 // Instantiate random GameObjects in array, set parent to canvas so it'll render
-                spawnedTopic = Instantiate(topics[Random.Range(0, topics.Length)], new Vector3 (200,200,0), Quaternion.identity, parentCanvas.transform);
+                spawnedTopic = Instantiate(topics[UnityEngine.Random.Range(0, topics.Length)], new Vector3 (200,200,0), Quaternion.identity, parentCanvas.transform);
                 spawnedTopic.SetActive(true);
                 // Reset timer
                 topicTimeLeft = topicSpawnTime;
@@ -74,5 +76,27 @@ public class TopicManager : MonoBehaviour
         Debug.Log(topicName);
 
         //make switch statement, enable spawning of real talk version of topics
+    }
+
+    public bool IsAlreadyVisited(string topic)
+    {
+        // return whether this topic is already visited
+        return false;
+    }
+
+    public void ClearTopicRoll()
+    {
+        // clear the scrolling topic list
+    }
+
+    public void ActivateTopicRoll()
+    {
+        // activate the scrolling topic list
+    }
+
+    public string GetNextTopic()
+    {
+        // topic initiated by Patchy - can't be already visited, can't be real-talk
+        return "Becoming a Youkai"; // placeholder
     }
 }

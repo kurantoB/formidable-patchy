@@ -30,7 +30,6 @@ public class timer : MonoBehaviour
 
         if (timeLeft <= 0)
         {
-            Debug.Log("Invoking msgExit: " + msgExit);
             msgExit();
         }
 }

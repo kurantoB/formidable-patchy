@@ -8,13 +8,7 @@ public class GameFlow : MonoBehaviour
 
     public void ChangeTopic(string topic)
     {
-        // Temporary logic to remove button
-        foreach (GameObject topicButton in GameObject.FindGameObjectsWithTag("TopicButton"))
-        {
-            GameObject.Destroy(topicButton);
-        }
-
-        // clear the topic scrolling list
+        TopicManager.instance.ClearTopicRoll();
 
         flowChart.SetStringVariable("NextBlock", topic);
         flowChart.SetBooleanVariable("PatchyInitiated", false);
@@ -27,12 +21,13 @@ public class GameFlow : MonoBehaviour
         {
             sayCommand.StopParentBlock();
 
-            // stop topic scrolling
+            TopicManager.instance.ClearTopicRoll();
 
             flowChart.ExecuteBlock(nextBlock);
-            if (false) // topic already visited
+            if (TopicManager.instance.IsAlreadyVisited(nextBlock))
             {
                 flowChart.SetIntegerVariable("ChancesLeft", Mathf.Max(0, flowChart.GetIntegerVariable("ChancesLeft") - 1));
+                flowChart.SetStringVariable("CurrentBlock", nextBlock);
                 flowChart.SetStringVariable("NextBlock", "Empty");
                 flowChart.SetStringVariable("BadTransition", "Already Talked About");
             }
@@ -50,11 +45,9 @@ public class GameFlow : MonoBehaviour
                 flowChart.SetBooleanVariable("TopicWinddown", false);
                 flowChart.SetStringVariable("CurrentBlock", nextBlock);
                 flowChart.SetStringVariable("NextBlock", "Empty");
-                // start topic scrolling
+
+                TopicManager.instance.ActivateTopicRoll();
             }
-            /*sayCommand.StopParentBlock();
-            flowChart.ExecuteBlock(nextBlock);
-            flowChart.SetStringVariable("NextBlock", "Empty");*/
         } else {
             bc();
         }
@@ -62,8 +55,8 @@ public class GameFlow : MonoBehaviour
 
     public void PatchyTopicChange()
     {
-        // stop topic scrolling
-        
+        TopicManager.instance.ClearTopicRoll();
+
         if (flowChart.GetIntegerVariable("ChancesLeft") == 0)
         {
             Debug.Log("PatchyTopicChange: End of Convo");
@@ -73,10 +66,9 @@ public class GameFlow : MonoBehaviour
             return;
         }
 
-        // get next topic from topic manager
-        string nextBlock = "Becoming a Youkai";
+        string nextBlock = TopicManager.instance.GetNextTopic();
 
-        // start topic scrolling
+        TopicManager.instance.ActivateTopicRoll();
 
         Debug.Log("PatchyTopicChange: " + nextBlock);
         flowChart.SetIntegerVariable("ChancesLeft", Mathf.Max(0, flowChart.GetIntegerVariable("ChancesLeft") - 1));
@@ -87,10 +79,13 @@ public class GameFlow : MonoBehaviour
         flowChart.SetBooleanVariable("TopicWinddown", false);
     }
 
+    public void TerminateCurrentTopic()
+    {
+        flowChart.FindBlock(flowChart.GetStringVariable("CurrentBlock")).Stop();
+    }
+
     public void ResumeTopic()
     {
-        flowChart.ExecuteBlock(flowChart.GetStringVariable("CurrentBlock"));
-        flowChart.FindBlock(flowChart.GetStringVariable("CurrentBlock")).JumpToCommandIndex = 2;
-        // start topic scrolling
+        TopicManager.instance.ActivateTopicRoll();
     }
 }
