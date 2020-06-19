@@ -11,11 +11,6 @@ public class SayPatchy : Say
     public PatchyExpression expression;
     public override void OnEnter()
     {
-        if (storyText.Equals("{x}"))
-        {
-            base.OnEnter();
-            return;
-        }
         character = GameObject.FindGameObjectWithTag("PatchyCharacter").GetComponent<Character>();
         portrait = GetMarisaDimPortrait();
         character.SetSayDialog.CharacterImage.CrossFadeAlpha(0.5f, 0.25f, true);
@@ -50,7 +45,7 @@ public class SayPatchy : Say
 
         float waitTime = storyText.Length > 70 ? 9 : 4;
         timer tmr = GameObject.FindGameObjectWithTag("MessageTimer").GetComponent<timer>();
-        tmr.timerReset(waitTime, PatchyMessageExit);
+        tmr.timerReset(waitTime, Continue);
         base.OnEnter();
     }
 
@@ -70,11 +65,6 @@ public class SayPatchy : Say
             default:
                 return null;
         }
-    }
-
-    private void PatchyMessageExit()
-    {
-        GameObject.FindObjectOfType<GameFlow>().HandleContinue(this, BaseContinue);
     }
 
     public override void Continue()
