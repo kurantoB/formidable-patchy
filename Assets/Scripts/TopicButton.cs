@@ -30,5 +30,8 @@ public class TopicButton : MonoBehaviour
 
     public void topicButtonClicked() {
         GameObject.FindGameObjectWithTag("GameFlow").GetComponent<GameFlow>().ChangeTopic(goToTopic);
+        
+        // Sends topic name to TopicManager, which will keep track of which topics have been visited
+        TopicManager.instance.Visited(goToTopic);
     }
 }

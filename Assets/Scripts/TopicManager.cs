@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TopicManager : MonoBehaviour
 {
+    public static TopicManager instance;
     // Array with all topic GameObjects
     public GameObject[] topics;
 
@@ -18,6 +19,26 @@ public class TopicManager : MonoBehaviour
 
     private GameObject spawnedTopic;
 
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else if (instance != this)
+        {
+            // A unique case where the Singleton exists but not in this scene
+            if (instance.gameObject.scene.name == null)
+            {
+                instance = this;
+            }
+            else
+            {
+                Destroy(this);
+            }
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -44,8 +65,14 @@ public class TopicManager : MonoBehaviour
                 spawnedTopic.SetActive(true);
                 // Reset timer
                 topicTimeLeft = topicSpawnTime;
-                
             }
         }
+    }
+
+    // Receives most recent clicked topic
+    public void Visited(string topicName){
+        Debug.Log(topicName);
+
+        //make switch statement, enable spawning of real talk version of topics
     }
 }
