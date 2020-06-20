@@ -6,7 +6,7 @@ using UnityEngine;
 public class TopicManager : MonoBehaviour
 {
     public static TopicManager instance;
-    // Array with all topic GameObjects
+    // Array with all topic GameObjects that can spawn
     public GameObject[] topics;
 
     public float topicSpawnTime;
@@ -72,32 +72,31 @@ public class TopicManager : MonoBehaviour
         }
     }
 
-    // Receives most recent clicked topic
+    // Keeps track of all topics player has visited
     public void Visited(string topicName){
+        // First topic will always be a new topic, add to visited list by default
         if(visitedTopics.Count == 0){
             visitedTopics.Add(topicName);
         }else{
-             // Check if topic has been visited before to prevent topics being added twice
-            foreach(string topic in visitedTopics){
-                if(topic == topicName){
-                    isSame = true;
-                }
-            }
-
-            // If topic is new, add to list of visited topics, if not new, do nothing
-            if(!isSame){
+            // Check if topic has been visited before, prevent old topics from being added twice
+            if(!IsAlreadyVisited(topicName)){
                 visitedTopics.Add(topicName);
                 Debug.Log("new topic");
-                
             }else{
-                isSame = false;
                 Debug.Log("old topic");
             }
+
         }
     }
 
+    // Checks if topic has been visited before by comparing topics with list of visited topics
     public bool IsAlreadyVisited(string topic)
     {
+        foreach(string topicItem in visitedTopics){
+            if(topicItem == topic){
+                return true;
+            }
+        }
         // return whether this topic is already visited
         return false;
     }
