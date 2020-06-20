@@ -12,15 +12,16 @@ public class TopicManager : MonoBehaviour
     public float topicSpawnTime;
     private float topicTimeLeft;
 
-    // Can use to stop timer, will probably need later 
-    bool timerRunning = true;
+    bool spawningTopics = true;
 
     // Canvas where topic buttons are drawn
     public GameObject parentCanvas;
 
     private GameObject spawnedTopic;
 
+    public List<string> visitedTopics;
 
+    private bool isSame = false;
     private void Awake()
     {
         if (instance == null)
@@ -58,7 +59,7 @@ public class TopicManager : MonoBehaviour
     void Update()
     {
         // Timer code
-        if(timerRunning){
+        if(spawningTopics){
              topicTimeLeft -= Time.deltaTime;
             if (topicTimeLeft <= 0)
             {
@@ -73,21 +74,26 @@ public class TopicManager : MonoBehaviour
 
     // Receives most recent clicked topic
     public void Visited(string topicName){
-        Debug.Log(topicName);
+        if(visitedTopics.Count == 0){
+            visitedTopics.Add(topicName);
+        }else{
+             // Check if topic has been visited before to prevent topics being added twice
+            foreach(string topic in visitedTopics){
+                if(topic == topicName){
+                    isSame = true;
+                }
+            }
 
-        switch(topicName){
-            case "Becoming a Youkai":
-                Debug.Log("yokai");
-                break;
-
-            case "Subterranean Animism":
-                Debug.Log("SA");
-                break;
-
-            default:
-                break;
+            // If topic is new, add to list of visited topics, if not new, do nothing
+            if(!isSame){
+                visitedTopics.Add(topicName);
+                Debug.Log("new topic");
+                
+            }else{
+                isSame = false;
+                Debug.Log("old topic");
+            }
         }
-        //make switch statement, enable spawning of real talk version of topics
     }
 
     public bool IsAlreadyVisited(string topic)
@@ -96,6 +102,7 @@ public class TopicManager : MonoBehaviour
         return false;
     }
 
+    // Clear the scrolling topic list
     public void ClearTopicRoll()
     {
         Debug.Log("clear topics");
@@ -105,9 +112,13 @@ public class TopicManager : MonoBehaviour
         }
     }
 
+    // Activate the scrolling topic list
     public void ActivateTopicRoll()
     {
-        // activate the scrolling topic list
+        
+        Debug.Log("activate topic roll");
+        spawningTopics = true;
+        
     }
 
     public string GetNextTopic()
