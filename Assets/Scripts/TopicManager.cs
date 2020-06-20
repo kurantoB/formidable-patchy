@@ -74,31 +74,30 @@ public class TopicManager : MonoBehaviour
 
     // Keeps track of all topics player has visited
     public void Visited(string topicName){
-        // First topic will always be a new topic, add to visited list by default
-        if(visitedTopics.Count == 0){
-            visitedTopics.Add(topicName);
-        }else{
-            // Check if topic has been visited before, prevent old topics from being added twice
-            if(!IsAlreadyVisited(topicName)){
-                visitedTopics.Add(topicName);
-                Debug.Log("new topic");
-            }else{
-                Debug.Log("old topic");
-            }
-
-        }
+        
     }
 
     // Checks if topic has been visited before by comparing topics with list of visited topics
     public bool IsAlreadyVisited(string topic)
     {
-        foreach(string topicItem in visitedTopics){
-            if(topicItem == topic){
-                return true;
+        // First topic will always be a new topic, add to visited list by default
+        if(visitedTopics.Count == 0){
+            Debug.Log(topic + " is a new topic");
+            visitedTopics.Add(topic);
+            return false;
+        }else{
+            foreach(string topicItem in visitedTopics){
+                if(topicItem == topic){
+                    // return if topic has been visited
+                    Debug.Log(topic + " is an old topic");
+                    return true;
+                }
             }
+            // return if topic has not been visited
+            Debug.Log(topic + " is a new topic");
+            visitedTopics.Add(topic);
+            return false;
         }
-        // return whether this topic is already visited
-        return false;
     }
 
     // Clear the scrolling topic list
