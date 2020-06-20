@@ -36,7 +36,6 @@ public class timer : MonoBehaviour
 
     public void timerReset(float messageTime, MessageExit msgExit)
     {
-        Debug.Log("timerReset");
         this.msgExit = msgExit;
         maxTime = messageTime;
         timeLeft = messageTime;
