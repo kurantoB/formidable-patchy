@@ -24,7 +24,7 @@ public class GameFlow : MonoBehaviour
         if (!"Empty".Equals(nextBlock))
         {
             sayCommand.StopParentBlock();
-            TopicManager.instance.ClearTopicRoll();
+            //TopicManager.instance.ClearTopicRoll();
             flowChart.SetBooleanVariable("ConfessionZone", false);
             flowChart.ExecuteBlock(nextBlock);
             if (TopicManager.instance.IsAlreadyVisited(nextBlock))
