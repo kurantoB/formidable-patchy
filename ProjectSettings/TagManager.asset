@@ -9,6 +9,7 @@ TagManager:
   - PatchyCharacter
   - TopicButton
   - GameFlow
+  - AudioSource
   layers:
   - Default
   - TransparentFX
