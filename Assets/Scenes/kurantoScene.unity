@@ -763,15 +763,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 505cd197bbbc0954ab69e6fc7bcffdae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  topics:
+  availableTopics:
   - {fileID: 6569117024407821845, guid: 6ca45a7eff0ce7247a162283fc3a8af3, type: 3}
-  - {fileID: 3989385201892530208, guid: d3194eab4890cca4e9d72bc15f507dd3, type: 3}
-  - {fileID: 486869677538856192, guid: e45d6eb2fb4d072409b49aa85762a2e9, type: 3}
   - {fileID: 2802713218343459551, guid: 4a4d4fe71c35e18439aa726542505ed3, type: 3}
-  - {fileID: 4838532574742515925, guid: ff160e313bb97074c89c0d41a15ad767, type: 3}
-  - {fileID: 3672438467729480918, guid: 8cb1eca62cbfa854486269f706785440, type: 3}
-  - {fileID: 6309516933391202347, guid: 1fb417434e2984f45ae6a003f03745e1, type: 3}
   - {fileID: 1421055146601158407, guid: 9b3e216a44351ed4e9dabe8a4ae0aa59, type: 3}
+  - {fileID: 3535235306558177834, guid: 6edeeded7dc5a9743a27b2a3bcf382c8, type: 3}
+  - {fileID: 6309516933391202347, guid: 1fb417434e2984f45ae6a003f03745e1, type: 3}
+  - {fileID: 4838532574742515925, guid: ff160e313bb97074c89c0d41a15ad767, type: 3}
+  - {fileID: 3989385201892530208, guid: d3194eab4890cca4e9d72bc15f507dd3, type: 3}
+  realTalkTopics:
+  - {fileID: 486869677538856192, guid: e45d6eb2fb4d072409b49aa85762a2e9, type: 3}
   - {fileID: 3535235306558177834, guid: 6edeeded7dc5a9743a27b2a3bcf382c8, type: 3}
   topicSpawnTime: 6
   parentCanvas: {fileID: 939845037}

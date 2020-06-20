@@ -7,7 +7,8 @@ public class TopicManager : MonoBehaviour
 {
     public static TopicManager instance;
     // Array with all topic GameObjects that can spawn
-    public GameObject[] topics;
+    public List<GameObject> availableTopics;
+    public GameObject[] realTalkTopics;
 
     public float topicSpawnTime;
     private float topicTimeLeft;
@@ -50,7 +51,7 @@ public class TopicManager : MonoBehaviour
         topicTimeLeft = topicSpawnTime;
 
         // Set every original topic button false so they won't move up and delete themselves
-        foreach (GameObject topic in topics){
+        foreach (GameObject topic in availableTopics){
             topic.SetActive(false);
         }
     }
@@ -64,7 +65,7 @@ public class TopicManager : MonoBehaviour
             if (topicTimeLeft <= 0)
             {
                 // Instantiate random GameObjects in array, set parent to canvas so it'll render
-                spawnedTopic = Instantiate(topics[UnityEngine.Random.Range(0, topics.Length)], new Vector3 (200,200,0), Quaternion.identity, parentCanvas.transform);
+                spawnedTopic = Instantiate(availableTopics[UnityEngine.Random.Range(0, availableTopics.Count)], new Vector3 (200,200,0), Quaternion.identity, parentCanvas.transform);
                 spawnedTopic.SetActive(true);
                 // Reset timer
                 topicTimeLeft = topicSpawnTime;
@@ -81,11 +82,12 @@ public class TopicManager : MonoBehaviour
     public bool IsAlreadyVisited(string topic)
     {
         // First topic will always be a new topic, add to visited list by default
-        if(visitedTopics.Count == 0){
-            Debug.Log(topic + " is a new topic");
-            visitedTopics.Add(topic);
-            return false;
-        }else{
+        // if(visitedTopics.Count == 0){
+        //     Debug.Log(topic + " is a new topic");
+        //     CheckProgress();
+        //     visitedTopics.Add(topic);
+        //     return false;
+        // }else{
             foreach(string topicItem in visitedTopics){
                 if(topicItem == topic){
                     // return if topic has been visited
@@ -96,8 +98,9 @@ public class TopicManager : MonoBehaviour
             // return if topic has not been visited
             Debug.Log(topic + " is a new topic");
             visitedTopics.Add(topic);
+            CheckProgress();
             return false;
-        }
+        // }
     }
 
     // Clear the scrolling topic list
@@ -114,10 +117,8 @@ public class TopicManager : MonoBehaviour
     // Activate the scrolling topic list
     public void ActivateTopicRoll()
     {
-        
         Debug.Log("activate topic roll");
         spawningTopics = true;
-        
     }
 
     public string GetNextTopic()
@@ -129,5 +130,14 @@ public class TopicManager : MonoBehaviour
     internal int GetProgress(string newTopic)
     {
         throw new NotImplementedException();
+    }
+
+    public void CheckProgress(){
+        if(visitedTopics.Contains("Subterranean Animism") || visitedTopics.Contains("Flandre")){
+            Debug.Log("Player has visited SA + Flandre, enalbing Youkai (Real Talk");
+
+        }else{
+            Debug.Log("does not contain SA");
+        }
     }
 }
