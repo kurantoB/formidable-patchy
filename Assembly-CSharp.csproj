@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\LinkHandler.cs" />
     <Compile Include="Assets\Scripts\MarisaExpression.cs" />
     <Compile Include="Assets\Scripts\PatchyExpression.cs" />
+    <Compile Include="Assets\Scripts\PrologueController.cs" />
     <Compile Include="Assets\Scripts\SayMarisa.cs" />
     <Compile Include="Assets\Scripts\SayPatchy.cs" />
     <Compile Include="Assets\Scripts\TopicButton.cs" />

@@ -11,7 +11,7 @@ public class SayPatchy : Say
     public PatchyExpression expression;
     public override void OnEnter()
     {
-        character = GameObject.FindGameObjectWithTag("PatchyCharacter").GetComponent<Character>();
+        character = GameObject.FindGameObjectWithTag("MarisaCharacter").GetComponent<Character>();
         portrait = GetMarisaDimPortrait();
         character.SetSayDialog.CharacterImage.CrossFadeAlpha(0.5f, 0.25f, true);
         switch (expression)
@@ -44,8 +44,11 @@ public class SayPatchy : Say
         GetFlowchart().ExecuteBlock("PatchyPortrait");
 
         float waitTime = storyText.Length > 70 ? 9 : 4;
-        timer tmr = GameObject.FindGameObjectWithTag("MessageTimer").GetComponent<timer>();
-        tmr.timerReset(waitTime, Continue);
+        if (GameObject.FindGameObjectWithTag("MessageTimer") != null)
+        {
+            timer tmr = GameObject.FindGameObjectWithTag("MessageTimer").GetComponent<timer>();
+            tmr.timerReset(waitTime, Continue);
+        }
         base.OnEnter();
     }
 
@@ -79,7 +82,13 @@ public class SayPatchy : Say
 
     public override void Continue()
     {
-        GameObject.FindObjectOfType<GameFlow>().HandleContinue(this, BaseContinue);
+        if (GameObject.FindObjectOfType<GameFlow>() != null)
+        {
+            GameObject.FindObjectOfType<GameFlow>().HandleContinue(this, BaseContinue);
+        } else
+        {
+            base.Continue();
+        }
     }
 
     private void BaseContinue()
