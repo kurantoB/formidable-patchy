@@ -108,6 +108,7 @@ public class TopicManager : MonoBehaviour
         foreach (GameObject topic in GameObject.FindGameObjectsWithTag("TopicButton")){
             Destroy(topic);
         }
+        spawningTopics = false;
     }
 
     // Activate the scrolling topic list
