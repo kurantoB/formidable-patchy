@@ -1,4 +1,10 @@
 ﻿public enum MarisaExpression
 {
-    HAPPY, GRINNING
+    HAPPY,
+    GRINNING,
+    EXASPERATED,
+    INQUISITIVE,
+    SAD,
+    SURPRISED,
+    THINKING
 }

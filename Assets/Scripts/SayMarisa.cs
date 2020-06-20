@@ -14,7 +14,7 @@ public class SayMarisa : Say
         character = GameObject.FindGameObjectWithTag("MarisaCharacter").GetComponent<Character>();
         portrait = GetCharacterPortrait();
         character.SetSayDialog.CharacterImage.CrossFadeAlpha(1, 0.25f, true);
-        float waitTime = storyText.Length > 70 ? 9 : 4;
+        float waitTime = storyText.Length > 70 ? 9 : 4.5f;
         timer tmr = GameObject.FindGameObjectWithTag("MessageTimer").GetComponent<timer>();
         tmr.timerReset(waitTime, Continue);
         base.OnEnter();
@@ -35,6 +35,21 @@ public class SayMarisa : Say
             case MarisaExpression.GRINNING:
                 GetFlowchart().SetStringVariable("MarisaExpression", "GRINNING");
                 return character.Portraits[1];
+            case MarisaExpression.EXASPERATED:
+                GetFlowchart().SetStringVariable("MarisaExpression", "EXASPERATED");
+                return character.Portraits[2];
+            case MarisaExpression.INQUISITIVE:
+                GetFlowchart().SetStringVariable("MarisaExpression", "INQUISITIVE");
+                return character.Portraits[3];
+            case MarisaExpression.SAD:
+                GetFlowchart().SetStringVariable("MarisaExpression", "SAD");
+                return character.Portraits[4];
+            case MarisaExpression.SURPRISED:
+                GetFlowchart().SetStringVariable("MarisaExpression", "SURPRISED");
+                return character.Portraits[5];
+            case MarisaExpression.THINKING:
+                GetFlowchart().SetStringVariable("MarisaExpression", "THINKING");
+                return character.Portraits[6];
             default:
                 return null;
         }

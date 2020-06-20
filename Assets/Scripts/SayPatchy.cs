@@ -62,6 +62,16 @@ public class SayPatchy : Say
                 return GameObject.FindGameObjectWithTag("MarisaCharacter").GetComponent<Character>().Portraits[0];
             case "GRINNING":
                 return GameObject.FindGameObjectWithTag("MarisaCharacter").GetComponent<Character>().Portraits[1];
+            case "EXASPERATED":
+                return GameObject.FindGameObjectWithTag("MarisaCharacter").GetComponent<Character>().Portraits[2];
+            case "INQUISITIVE":
+                return GameObject.FindGameObjectWithTag("MarisaCharacter").GetComponent<Character>().Portraits[3];
+            case "SAD":
+                return GameObject.FindGameObjectWithTag("MarisaCharacter").GetComponent<Character>().Portraits[4];
+            case "SURPRISED":
+                return GameObject.FindGameObjectWithTag("MarisaCharacter").GetComponent<Character>().Portraits[5];
+            case "THINKING":
+                return GameObject.FindGameObjectWithTag("MarisaCharacter").GetComponent<Character>().Portraits[6];
             default:
                 return null;
         }

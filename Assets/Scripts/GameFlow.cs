@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
 using Fungus;
+using TMPro;
+using System;
 
 public class GameFlow : MonoBehaviour
 {
     public Flowchart flowChart;
     public delegate void BaseContinue();
+    public TextMeshProUGUI thingsLeftText;
+    public Effects effects;
 
     public void ChangeTopic(string topic)
     {
@@ -20,20 +24,21 @@ public class GameFlow : MonoBehaviour
         if (!"Empty".Equals(nextBlock))
         {
             sayCommand.StopParentBlock();
-
             TopicManager.instance.ClearTopicRoll();
-
+            flowChart.SetBooleanVariable("ConfessionZone", false);
             flowChart.ExecuteBlock(nextBlock);
             if (TopicManager.instance.IsAlreadyVisited(nextBlock))
             {
                 flowChart.SetIntegerVariable("ChancesLeft", Mathf.Max(0, flowChart.GetIntegerVariable("ChancesLeft") - 1));
+                SetThingsLeftText(flowChart.GetIntegerVariable("ChancesLeft"));
                 flowChart.SetStringVariable("CurrentBlock", nextBlock);
                 flowChart.SetStringVariable("NextBlock", "Empty");
                 flowChart.SetStringVariable("BadTransition", "Already Talked About");
             }
             else if (!flowChart.GetBooleanVariable("TopicWinddown"))
             {
-                flowChart.SetIntegerVariable("ChancesLeft", Mathf.Max(0, flowChart.GetIntegerVariable("ChancesLeft") - 1));
+                flowChart.SetIntegerVariable("ChancesLeft", Mathf.Max(0, flowChart.GetIntegerVariable("ChancesLeft") - 2));
+                SetThingsLeftText(flowChart.GetIntegerVariable("ChancesLeft"));
                 flowChart.SetBooleanVariable("TopicWinddown", false);
                 flowChart.SetStringVariable("CurrentBlock", nextBlock);
                 flowChart.SetStringVariable("BadTransition", "Abrupt Topic Change");
@@ -42,6 +47,7 @@ public class GameFlow : MonoBehaviour
             {
                 // good transition
                 flowChart.SetIntegerVariable("ChancesLeft", Mathf.Max(0, flowChart.GetIntegerVariable("ChancesLeft") - 1));
+                SetThingsLeftText(flowChart.GetIntegerVariable("ChancesLeft"));
                 flowChart.SetBooleanVariable("TopicWinddown", false);
                 flowChart.SetStringVariable("CurrentBlock", nextBlock);
                 flowChart.SetStringVariable("NextBlock", "Empty");
@@ -72,6 +78,7 @@ public class GameFlow : MonoBehaviour
 
         Debug.Log("PatchyTopicChange: " + nextBlock);
         flowChart.SetIntegerVariable("ChancesLeft", Mathf.Max(0, flowChart.GetIntegerVariable("ChancesLeft") - 1));
+        SetThingsLeftText(flowChart.GetIntegerVariable("ChancesLeft"));
         flowChart.SetBooleanVariable("PatchyInitiated", true);
         flowChart.ExecuteBlock(nextBlock);
         flowChart.SetStringVariable("CurrentBlock", nextBlock);
@@ -87,5 +94,17 @@ public class GameFlow : MonoBehaviour
     public void ResumeTopic()
     {
         TopicManager.instance.ActivateTopicRoll();
+    }
+
+    private void SetThingsLeftText(int thingsLeft)
+    {
+        if (thingsLeft == 1)
+        {
+            thingsLeftText.SetText("1 thing left to talk about");
+        } else
+        {
+            thingsLeftText.SetText(thingsLeft + " things left to talk about");
+        }
+        effects.BlinkThingsLeft();
     }
 }
