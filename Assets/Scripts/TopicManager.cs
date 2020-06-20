@@ -49,16 +49,7 @@ public class TopicManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Get array of all GameObjects with TopicButton tag to spawn later
-        //topics = GameObject.FindGameObjectsWithTag("TopicButton");
         topicTimeLeft = topicSpawnTime;
-
-        // Set every original topic button false so they won't move up and delete themselves
-        foreach (GameObject topic in availableTopics){
-            topic.SetActive(false);
-        }
-
-        
     }
 
     // Update is called once per frame
@@ -86,13 +77,6 @@ public class TopicManager : MonoBehaviour
     // Checks if topic has been visited before by comparing topics with list of visited topics
     public bool IsAlreadyVisited(string topic)
     {
-        // First topic will always be a new topic, add to visited list by default
-        // if(visitedTopics.Count == 0){
-        //     Debug.Log(topic + " is a new topic");
-        //     CheckProgress();
-        //     visitedTopics.Add(topic);
-        //     return false;
-        // }else{
             foreach(string topicItem in visitedTopics){
                 if(topicItem == topic){
                     // return if topic has been visited
@@ -105,7 +89,6 @@ public class TopicManager : MonoBehaviour
             visitedTopics.Add(topic);
             CheckProgress(topic);
             return false;
-        // }
     }
 
     // Clear the scrolling topic list
@@ -134,7 +117,6 @@ public class TopicManager : MonoBehaviour
 
     internal int GetProgress(string newTopic)
     {
-        return 2;
         throw new NotImplementedException();
     }
 
@@ -159,7 +141,6 @@ public class TopicManager : MonoBehaviour
             default:
                 Debug.Log("No progress made");
             break;
-            
         }
 
         if(youkaiProgress == 2){
@@ -179,6 +160,6 @@ public class TopicManager : MonoBehaviour
             Debug.Log("Player has visited Grimoire + Health, enabling Magic (Real Talk");
             availableTopics.RemoveAt(1);
             availableTopics.Add(realTalkTopics[1]);
-        }        
+        }       
     }
 }
