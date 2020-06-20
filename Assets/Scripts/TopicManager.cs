@@ -87,7 +87,6 @@ public class TopicManager : MonoBehaviour
             // return if topic has not been visited
             Debug.Log(topic + " is a new topic");
             visitedTopics.Add(topic);
-            CheckProgress(topic);
             return false;
     }
 
@@ -117,7 +116,53 @@ public class TopicManager : MonoBehaviour
 
     internal int GetProgress(string newTopic)
     {
-        throw new NotImplementedException();
+        switch(newTopic){
+            case "Subterranean Animism":
+                Debug.Log("Progress made");
+                youkaiProgress++;
+                break;
+            case "Flandre":
+                Debug.Log("Progress made");
+                youkaiProgress++;
+                break;
+            case "Marisa's Grimoire":
+                Debug.Log("Progress made");
+                magicProgress++;
+                break;
+            case "Patchouli's Health":
+                Debug.Log("Progress made");
+                magicProgress++;
+                break;
+            default:
+                Debug.Log("No progress made");
+            break;
+        }
+
+        if(youkaiProgress >= magicProgress){          
+                if(youkaiProgress == 2){
+                    Debug.Log("Player has visited SA + Flandre, enabling Youkai (Real Talk");
+                    // Assumes index of casual topic and removes it from spawning, 
+                    availableTopics.RemoveAt(0);
+                    // Assumes index of real topic and adds it to spawning list
+                    availableTopics.Add(realTalkTopics[0]);
+                    
+                    
+                    /*
+                    THERE'S GOTTA BE A BETTER WAY THAN JUST ASSUMING THE INDEX
+                    LOOK INTO REMOVING AND ADDING GAMEOBJECTS FROM A LIST BY NAME
+                    It works at the moment as long as the index of the topics aren't switched
+                    */
+                }
+            return youkaiProgress;
+        }else{
+            if(magicProgress == 2){
+                Debug.Log("Player has visited Grimoire + Health, enabling Magic (Real Talk");
+                availableTopics.RemoveAt(1);
+                availableTopics.Add(realTalkTopics[1]);
+            }  
+            return magicProgress;
+        }
+        return 0;
     }
 
     public void CheckProgress(string topic){

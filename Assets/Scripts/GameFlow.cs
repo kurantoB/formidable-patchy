@@ -14,7 +14,7 @@ public class GameFlow : MonoBehaviour
     public void ChangeTopic(string topic)
     {
         TopicManager.instance.ClearTopicRoll();
-
+        
         flowChart.SetStringVariable("NextBlock", topic);
         flowChart.SetBooleanVariable("PatchyInitiated", false);
         flowChart.SetBooleanVariable("ConfessionZone", false);
@@ -42,6 +42,7 @@ public class GameFlow : MonoBehaviour
             }
             else if (!flowChart.GetBooleanVariable("TopicWinddown"))
             {
+                CheckProgress(nextBlock);
                 flowChart.SetIntegerVariable("ChancesLeft", Mathf.Max(0, flowChart.GetIntegerVariable("ChancesLeft") - 2));
                 SetThingsLeftText(flowChart.GetIntegerVariable("ChancesLeft"));
                 flowChart.SetStringVariable("CurrentBlock", nextBlock);
@@ -51,6 +52,7 @@ public class GameFlow : MonoBehaviour
             {
                 flowChart.SetStringVariable("NextBlock", "Empty");
             } else {
+                CheckProgress(nextBlock);
                 // good transition
                 flowChart.SetIntegerVariable("ChancesLeft", Mathf.Max(0, flowChart.GetIntegerVariable("ChancesLeft") - 1));
                 SetThingsLeftText(flowChart.GetIntegerVariable("ChancesLeft"));
@@ -92,8 +94,7 @@ public class GameFlow : MonoBehaviour
 
     public void CheckProgress(string newTopic)
     {
-        //int progress = TopicManager.instance.GetProgress(newTopic);
-        effects.MoveProgressHeart(0);
+        effects.MoveProgressHeart(TopicManager.instance.GetProgress(newTopic));
     }
 
     public void ReenableTopicRoll()
