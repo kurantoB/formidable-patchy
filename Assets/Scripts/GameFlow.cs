@@ -19,10 +19,10 @@ public class GameFlow : MonoBehaviour
         flowChart.SetBooleanVariable("PatchyInitiated", false);
         flowChart.SetBooleanVariable("ConfessionZone", false);
         flowChart.SetBooleanVariable("TopicWinddown", false);
-        if (flowChart.GetStringVariable("CurrentBlock").Equals("Becoming a Youkai (Real Talk)")
-            || flowChart.GetStringVariable("CurrentBlock").Equals("Magic (Real Talk)")) {
-            effects.MoveProgressHeart(2);
-        }
+        // if (flowChart.GetStringVariable("CurrentBlock").Equals("Becoming a Youkai (Real Talk)")
+        //     || flowChart.GetStringVariable("CurrentBlock").Equals("Magic (Real Talk)")) {
+        //     effects.MoveProgressHeart(2);
+        // }
     }
 
     public void HandleContinue(Say sayCommand, BaseContinue bc)
