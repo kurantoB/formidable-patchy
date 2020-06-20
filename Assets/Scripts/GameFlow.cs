@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Fungus;
 using TMPro;
-using System;
+using UnityEngine.SceneManagement;
 
 public class GameFlow : MonoBehaviour
 {
@@ -9,6 +9,7 @@ public class GameFlow : MonoBehaviour
     public delegate void BaseContinue();
     public TextMeshProUGUI thingsLeftText;
     public Effects effects;
+    public GameObject endMenu;
 
     public void ChangeTopic(string topic)
     {
@@ -86,6 +87,12 @@ public class GameFlow : MonoBehaviour
         flowChart.SetBooleanVariable("TopicWinddown", false);
     }
 
+    public void CheckProgress(string newTopic)
+    {
+        int progress = TopicManager.instance.GetProgress(newTopic);
+        effects.MoveProgressHeart(progress);
+    }
+
     public void TerminateCurrentTopic()
     {
         flowChart.FindBlock(flowChart.GetStringVariable("CurrentBlock")).Stop();
@@ -106,5 +113,16 @@ public class GameFlow : MonoBehaviour
             thingsLeftText.SetText(thingsLeft + " things left to talk about");
         }
         effects.BlinkThingsLeft();
+    }
+
+    public void DisplayEndMenu()
+    {
+        endMenu.SetActive(true);
+    }
+
+    public void TryAgain()
+    {
+        Scene scene = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(scene.name);
     }
 }

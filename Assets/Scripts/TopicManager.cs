@@ -125,4 +125,9 @@ public class TopicManager : MonoBehaviour
         // topic initiated by Patchy - can't be already visited, can't be real-talk
         return "Becoming a Youkai"; // placeholder
     }
+
+    internal int GetProgress(string newTopic)
+    {
+        throw new NotImplementedException();
+    }
 }
