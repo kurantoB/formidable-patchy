@@ -42,6 +42,7 @@ public class Effects : MonoBehaviour
         }
         if (heartTransition)
         {
+            Debug.Log("Heart x: " + progressHeart.localPosition.x);
             heartTimeElapsed += Time.deltaTime;
             if (heartTimeElapsed >= 0.3f)
             {
@@ -49,6 +50,7 @@ public class Effects : MonoBehaviour
                 float y = progressHeart.localPosition.y;
                 float z = progressHeart.localPosition.z;
                 progressHeart.localPosition = new Vector3(x, y, z);
+                Debug.Log("Heart x: " + progressHeart.localPosition.x);
                 heartTimeElapsed = 0;
                 heartTransition = false;
             } else
@@ -71,19 +73,20 @@ public class Effects : MonoBehaviour
     public void MoveProgressHeart(int stage)
     {
         heartStartPosition = progressHeart.localPosition.x;
+        Debug.Log("Heart x: " + progressHeart.localPosition.x);
         switch (stage)
         {
             case 0:
-                heartDestPosition = heartStartPosition + stage0;
+                heartDestPosition = -265 + stage0;
                 break;
             case 1:
-                heartDestPosition = heartStartPosition + stage1;
+                heartDestPosition = -265 + stage1;
                 break;
             case 2:
-                heartDestPosition = heartStartPosition + stage2;
+                heartDestPosition = -265 + stage2;
                 break;
             case 3:
-                heartDestPosition = heartStartPosition + stage3;
+                heartDestPosition = -265 + stage3;
                 break;
         }
         heartTransition = true;

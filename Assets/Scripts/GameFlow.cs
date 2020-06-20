@@ -17,6 +17,12 @@ public class GameFlow : MonoBehaviour
 
         flowChart.SetStringVariable("NextBlock", topic);
         flowChart.SetBooleanVariable("PatchyInitiated", false);
+        flowChart.SetBooleanVariable("ConfessionZone", false);
+        flowChart.SetBooleanVariable("TopicWinddown", false);
+        if (flowChart.GetStringVariable("CurrentBlock").Equals("Becoming a Youkai (Real Talk)")
+            || flowChart.GetStringVariable("CurrentBlock").Equals("Magic (Real Talk)")) {
+            effects.MoveProgressHeart(2);
+        }
     }
 
     public void HandleContinue(Say sayCommand, BaseContinue bc)
@@ -25,8 +31,6 @@ public class GameFlow : MonoBehaviour
         if (!"Empty".Equals(nextBlock))
         {
             sayCommand.StopParentBlock();
-            //TopicManager.instance.ClearTopicRoll();
-            flowChart.SetBooleanVariable("ConfessionZone", false);
             flowChart.ExecuteBlock(nextBlock);
             if (TopicManager.instance.IsAlreadyVisited(nextBlock))
             {
@@ -40,16 +44,16 @@ public class GameFlow : MonoBehaviour
             {
                 flowChart.SetIntegerVariable("ChancesLeft", Mathf.Max(0, flowChart.GetIntegerVariable("ChancesLeft") - 2));
                 SetThingsLeftText(flowChart.GetIntegerVariable("ChancesLeft"));
-                flowChart.SetBooleanVariable("TopicWinddown", false);
                 flowChart.SetStringVariable("CurrentBlock", nextBlock);
                 flowChart.SetStringVariable("BadTransition", "Abrupt Topic Change");
                 flowChart.SetStringVariable("NextBlock", "Empty");
-            } else
+            } else if (nextBlock.Equals("Youkai Confession") || nextBlock.Equals("Magic Confession") || nextBlock.Equals("Fail Confession"))
             {
+                flowChart.SetStringVariable("NextBlock", "Empty");
+            } else {
                 // good transition
                 flowChart.SetIntegerVariable("ChancesLeft", Mathf.Max(0, flowChart.GetIntegerVariable("ChancesLeft") - 1));
                 SetThingsLeftText(flowChart.GetIntegerVariable("ChancesLeft"));
-                flowChart.SetBooleanVariable("TopicWinddown", false);
                 flowChart.SetStringVariable("CurrentBlock", nextBlock);
                 flowChart.SetStringVariable("NextBlock", "Empty");
 
@@ -84,23 +88,20 @@ public class GameFlow : MonoBehaviour
         flowChart.ExecuteBlock(nextBlock);
         flowChart.SetStringVariable("CurrentBlock", nextBlock);
         flowChart.SetStringVariable("NextBlock", "Empty");
-        flowChart.SetBooleanVariable("TopicWinddown", false);
     }
 
     public void CheckProgress(string newTopic)
     {
-        int progress = TopicManager.instance.GetProgress(newTopic);
-        effects.MoveProgressHeart(progress);
+        //int progress = TopicManager.instance.GetProgress(newTopic);
+        effects.MoveProgressHeart(0);
     }
 
-    public void TerminateCurrentTopic()
+    public void ReenableTopicRoll()
     {
-        flowChart.FindBlock(flowChart.GetStringVariable("CurrentBlock")).Stop();
-    }
-
-    public void ResumeTopic()
-    {
-        TopicManager.instance.ActivateTopicRoll();
+        if (flowChart.GetIntegerVariable("ChancesLeft") >= 1)
+        {
+            TopicManager.instance.ActivateTopicRoll();
+        }
     }
 
     private void SetThingsLeftText(int thingsLeft)

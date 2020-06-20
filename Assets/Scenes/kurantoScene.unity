@@ -1859,7 +1859,6 @@ GameObject:
   - component: {fileID: 582876356}
   - component: {fileID: 582876358}
   - component: {fileID: 582876359}
-  - component: {fileID: 582876357}
   - component: {fileID: 582876360}
   - component: {fileID: 582876361}
   - component: {fileID: 582876362}
@@ -1883,10 +1882,7 @@ GameObject:
   - component: {fileID: 582876374}
   - component: {fileID: 582876373}
   - component: {fileID: 582876372}
-  - component: {fileID: 582876384}
   - component: {fileID: 582876385}
-  - component: {fileID: 582876395}
-  - component: {fileID: 582876396}
   - component: {fileID: 582876387}
   - component: {fileID: 582876392}
   - component: {fileID: 582876391}
@@ -1897,7 +1893,6 @@ GameObject:
   - component: {fileID: 582876393}
   - component: {fileID: 582876386}
   - component: {fileID: 582876369}
-  - component: {fileID: 582876397}
   - component: {fileID: 582876431}
   - component: {fileID: 582876430}
   - component: {fileID: 582876429}
@@ -2111,8 +2106,6 @@ GameObject:
   - component: {fileID: 582876631}
   - component: {fileID: 582876605}
   - component: {fileID: 582876604}
-  - component: {fileID: 582876603}
-  - component: {fileID: 582876602}
   - component: {fileID: 582876607}
   - component: {fileID: 582876614}
   - component: {fileID: 582876613}
@@ -2123,7 +2116,6 @@ GameObject:
   - component: {fileID: 582876608}
   - component: {fileID: 582876616}
   - component: {fileID: 582876615}
-  - component: {fileID: 582876617}
   - component: {fileID: 582876620}
   - component: {fileID: 582876619}
   - component: {fileID: 582876606}
@@ -2147,6 +2139,12 @@ GameObject:
   - component: {fileID: 582876643}
   - component: {fileID: 582876638}
   - component: {fileID: 582876634}
+  - component: {fileID: 582876357}
+  - component: {fileID: 582876647}
+  - component: {fileID: 582876384}
+  - component: {fileID: 582876648}
+  - component: {fileID: 582876649}
+  - component: {fileID: 582876395}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2167,11 +2165,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 203.46942, y: 66.01427}
+  scrollPos: {x: 210.67982, y: 52.531136}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
-  blockViewHeight: 437
-  zoom: 0.6099999
+  blockViewHeight: 516
+  zoom: 0.60999984
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -2179,7 +2177,7 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 582876438}
+  - {fileID: 582876370}
   selectedCommands: []
   variables:
   - {fileID: 582876239}
@@ -4232,7 +4230,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 13.321249
     y: 117.509735
-    width: 171.3115
+    width: 171.31151
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5820,7 +5818,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 204.61633
     y: 1.5774422
-    width: 125.40985
+    width: 125.40986
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5996,17 +5994,41 @@ MonoBehaviour:
   m_GameObject: {fileID: 582876233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 050fb9e6e72f442b3b883da8a965bdeb, type: 3}
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 169
+  itemId: 592
   indentLevel: 0
-  targetFlowchart: {fileID: 0}
-  targetBlock: {fileID: 582876354}
-  startLabel:
-    stringRef: {fileID: 0}
-    stringVal: 
-  startIndex: 0
+  description: 
+  targetObject: {fileID: 1745004950}
+  targetComponentAssemblyName: Effects, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Effects
+  targetMethod: MoveProgressHeart
+  targetMethodText: 'MoveProgressHeart (Int32): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Int32
+      intValue: 3
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
   callMode: 0
 --- !u!114 &582876358
 MonoBehaviour:
@@ -6033,8 +6055,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 582876359}
   commandList:
-  - {fileID: 582876384}
-  - {fileID: 582876357}
+  - {fileID: 582876649}
   suppressAllAutoSelections: 0
 --- !u!114 &582876359
 MonoBehaviour:
@@ -6065,7 +6086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scope: 0
   key: ChancesLeft
-  value: 6
+  value: 7
 --- !u!114 &582876361
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -6093,8 +6114,6 @@ MonoBehaviour:
   commandList:
   - {fileID: 582876365}
   - {fileID: 582876364}
-  - {fileID: 582876396}
-  - {fileID: 582876397}
   - {fileID: 582876366}
   suppressAllAutoSelections: 0
 --- !u!114 &582876362
@@ -6385,8 +6404,8 @@ MonoBehaviour:
     PublicKeyToken=null
   targetComponentFullname: UnityEngine.Component[]
   targetComponentText: GameFlow
-  targetMethod: ResumeTopic
-  targetMethodText: 'ResumeTopic (): Void'
+  targetMethod: ReenableTopicRoll
+  targetMethodText: 'ReenableTopicRoll (): Void'
   methodParameters: []
   saveReturnValue: 0
   returnValueVariableKey: 
@@ -6420,7 +6439,6 @@ MonoBehaviour:
   commandList:
   - {fileID: 582876368}
   - {fileID: 582876367}
-  - {fileID: 582876395}
   - {fileID: 582876369}
   suppressAllAutoSelections: 0
 --- !u!114 &582876371
@@ -6439,7 +6457,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 356.1985
     y: 2.3476257
-    width: 120.49181
+    width: 120.49182
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6811,61 +6829,42 @@ MonoBehaviour:
   m_GameObject: {fileID: 582876233}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb77d0ce495044f6e9feb91b31798e8c, type: 3}
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 197
+  itemId: 594
   indentLevel: 0
-  variable: {fileID: 582876237}
-  setOperator: 0
-  booleanData:
-    booleanRef: {fileID: 0}
-    booleanVal: 0
-  integerData:
-    integerRef: {fileID: 0}
-    integerVal: 0
-  floatData:
-    floatRef: {fileID: 0}
-    floatVal: 0
-  stringData:
-    stringRef: {fileID: 0}
-    stringVal: Flandre
-  animatorData:
-    animatorRef: {fileID: 0}
-    animatorVal: {fileID: 0}
-  audioSourceData:
-    audioSourceRef: {fileID: 0}
-    audioSourceVal: {fileID: 0}
-  colorData:
-    colorRef: {fileID: 0}
-    colorVal: {r: 0, g: 0, b: 0, a: 0}
-  gameObjectData:
-    gameObjectRef: {fileID: 0}
-    gameObjectVal: {fileID: 0}
-  materialData:
-    materialRef: {fileID: 0}
-    materialVal: {fileID: 0}
-  objectData:
-    objectRef: {fileID: 0}
-    objectVal: {fileID: 0}
-  rigidbody2DData:
-    rigidbody2DRef: {fileID: 0}
-    rigidbody2DVal: {fileID: 0}
-  spriteData:
-    spriteRef: {fileID: 0}
-    spriteVal: {fileID: 0}
-  textureData:
-    textureRef: {fileID: 0}
-    textureVal: {fileID: 0}
-  transformData:
-    transformRef: {fileID: 0}
-    transformVal: {fileID: 0}
-  vector2Data:
-    vector2Ref: {fileID: 0}
-    vector2Val: {x: 0, y: 0}
-  vector3Data:
-    vector3Ref: {fileID: 0}
-    vector3Val: {x: 0, y: 0, z: 0}
+  description: 
+  targetObject: {fileID: 1745004950}
+  targetComponentAssemblyName: Effects, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Effects
+  targetMethod: MoveProgressHeart
+  targetMethodText: 'MoveProgressHeart (Int32): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Int32
+      intValue: 2
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &582876385
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -6932,6 +6931,7 @@ MonoBehaviour:
   - {fileID: 582876390}
   - {fileID: 582876389}
   - {fileID: 582876388}
+  - {fileID: 582876395}
   suppressAllAutoSelections: 0
 --- !u!114 &582876388
 MonoBehaviour:
@@ -7171,7 +7171,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb77d0ce495044f6e9feb91b31798e8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemId: 207
+  itemId: 597
   indentLevel: 0
   variable: {fileID: 582876385}
   setOperator: 0
@@ -7223,98 +7223,6 @@ MonoBehaviour:
   vector3Data:
     vector3Ref: {fileID: 0}
     vector3Val: {x: 0, y: 0, z: 0}
---- !u!114 &582876396
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582876233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb77d0ce495044f6e9feb91b31798e8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 208
-  indentLevel: 0
-  variable: {fileID: 582876385}
-  setOperator: 0
-  booleanData:
-    booleanRef: {fileID: 0}
-    booleanVal: 0
-  integerData:
-    integerRef: {fileID: 0}
-    integerVal: 0
-  floatData:
-    floatRef: {fileID: 0}
-    floatVal: 0
-  stringData:
-    stringRef: {fileID: 0}
-    stringVal: Empty
-  animatorData:
-    animatorRef: {fileID: 0}
-    animatorVal: {fileID: 0}
-  audioSourceData:
-    audioSourceRef: {fileID: 0}
-    audioSourceVal: {fileID: 0}
-  colorData:
-    colorRef: {fileID: 0}
-    colorVal: {r: 0, g: 0, b: 0, a: 0}
-  gameObjectData:
-    gameObjectRef: {fileID: 0}
-    gameObjectVal: {fileID: 0}
-  materialData:
-    materialRef: {fileID: 0}
-    materialVal: {fileID: 0}
-  objectData:
-    objectRef: {fileID: 0}
-    objectVal: {fileID: 0}
-  rigidbody2DData:
-    rigidbody2DRef: {fileID: 0}
-    rigidbody2DVal: {fileID: 0}
-  spriteData:
-    spriteRef: {fileID: 0}
-    spriteVal: {fileID: 0}
-  textureData:
-    textureRef: {fileID: 0}
-    textureVal: {fileID: 0}
-  transformData:
-    transformRef: {fileID: 0}
-    transformVal: {fileID: 0}
-  vector2Data:
-    vector2Ref: {fileID: 0}
-    vector2Val: {x: 0, y: 0}
-  vector3Data:
-    vector3Ref: {fileID: 0}
-    vector3Val: {x: 0, y: 0, z: 0}
---- !u!114 &582876397
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582876233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 219
-  indentLevel: 0
-  description: 
-  targetObject: {fileID: 292599008}
-  targetComponentAssemblyName: GameFlow, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: GameFlow
-  targetMethod: TerminateCurrentTopic
-  targetMethodText: 'TerminateCurrentTopic (): Void'
-  methodParameters: []
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
 --- !u!114 &582876398
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -8311,9 +8219,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nodeRect:
     serializedVersion: 2
-    x: -36.696194
+    x: -38.335537
     y: 226.10222
-    width: 217.21315
+    width: 217.21317
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8322,6 +8230,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 582876357}
   - {fileID: 582876430}
   - {fileID: 582876429}
   - {fileID: 582876428}
@@ -8359,6 +8268,7 @@ MonoBehaviour:
   - {fileID: 582876434}
   - {fileID: 582876433}
   - {fileID: 582876432}
+  - {fileID: 582876384}
   - {fileID: 582876425}
   suppressAllAutoSelections: 0
 --- !u!114 &582876432
@@ -8581,7 +8491,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 314.45532
     y: 302.98288
-    width: 151.63936
+    width: 151.63937
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8590,7 +8500,6 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 582876603}
   - {fileID: 582876450}
   - {fileID: 582876449}
   - {fileID: 582876448}
@@ -8703,7 +8612,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 290
   indentLevel: 0
-  storyText: '{i}(Open book){/i} Let''s see.'
+  storyText: '{i}(Opens book){/i} Let''s see.'
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -8845,7 +8754,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 286
   indentLevel: 0
-  storyText: Oh. G-Geez.
+  storyText: Oh. J-Jeez.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -8988,7 +8897,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 31.196287
     y: 285.6862
-    width: 148.36067
+    width: 148.36069
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9949,7 +9858,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 36.41091
     y: 405.14548
-    width: 145.08199
+    width: 145.082
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -12399,7 +12308,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 34.054375
     y: 531.0425
-    width: 146.72133
+    width: 146.72134
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -12408,6 +12317,7 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
+  - {fileID: 582876647}
   - {fileID: 582876564}
   - {fileID: 582876579}
   - {fileID: 582876578}
@@ -12431,6 +12341,7 @@ MonoBehaviour:
   - {fileID: 582876581}
   - {fileID: 582876627}
   - {fileID: 582876568}
+  - {fileID: 582876648}
   - {fileID: 582876567}
   suppressAllAutoSelections: 0
 --- !u!114 &582876566
@@ -13205,7 +13116,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 314.39502
     y: 362.15036
-    width: 148.36067
+    width: 148.36069
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13214,7 +13125,6 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 582876602}
   - {fileID: 582876601}
   - {fileID: 582876600}
   - {fileID: 582876599}
@@ -13388,7 +13298,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 512
   indentLevel: 0
-  storyText: "Aw geez, you\u2019re making me blush."
+  storyText: "Aw jeez, you\u2019re making me blush."
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -13570,62 +13480,6 @@ MonoBehaviour:
   waitForVO: 0
   setSayDialog: {fileID: 0}
   expression: 0
---- !u!114 &582876602
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582876233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 539
-  indentLevel: 0
-  description: 
-  targetObject: {fileID: 292599008}
-  targetComponentAssemblyName: GameFlow, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: GameFlow
-  targetMethod: TerminateCurrentTopic
-  targetMethodText: 'TerminateCurrentTopic (): Void'
-  methodParameters: []
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
---- !u!114 &582876603
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582876233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 538
-  indentLevel: 0
-  description: 
-  targetObject: {fileID: 292599008}
-  targetComponentAssemblyName: GameFlow, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: GameFlow
-  targetMethod: TerminateCurrentTopic
-  targetMethodText: 'TerminateCurrentTopic (): Void'
-  methodParameters: []
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
 --- !u!114 &582876604
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -13798,7 +13652,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 319.4815
     y: 419.23175
-    width: 133.60657
+    width: 133.60658
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13807,7 +13661,6 @@ MonoBehaviour:
   description: 
   eventHandler: {fileID: 0}
   commandList:
-  - {fileID: 582876617}
   - {fileID: 582876614}
   - {fileID: 582876613}
   - {fileID: 582876612}
@@ -14096,34 +13949,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 550
   indentLevel: 0
---- !u!114 &582876617
-MonoBehaviour:
-  m_ObjectHideFlags: 2
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 582876233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemId: 552
-  indentLevel: 0
-  description: 
-  targetObject: {fileID: 292599008}
-  targetComponentAssemblyName: GameFlow, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-    PublicKeyToken=null
-  targetComponentFullname: UnityEngine.Component[]
-  targetComponentText: GameFlow
-  targetMethod: TerminateCurrentTopic
-  targetMethodText: 'TerminateCurrentTopic (): Void'
-  methodParameters: []
-  saveReturnValue: 0
-  returnValueVariableKey: 
-  returnValueType: System.Void
-  showInherited: 0
-  callMode: 0
 --- !u!114 &582876618
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -14165,7 +13990,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 554
   indentLevel: 0
-  storyText: Well good grief! Would ya look at the time. I better get going'.
+  storyText: Well good grief! Would ya look at the time. I better get goin'.
   description: 
   character: {fileID: 0}
   portrait: {fileID: 0}
@@ -14237,7 +14062,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &582876622
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -14337,7 +14162,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &582876625
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -14478,7 +14303,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 320.90247
     y: 253.20667
-    width: 125.40985
+    width: 125.40986
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14592,7 +14417,7 @@ MonoBehaviour:
     vector3Val: {x: 0, y: 0, z: 0}
 --- !u!114 &582876634
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -14780,7 +14605,7 @@ MonoBehaviour:
   targetButton: {fileID: 1983876096}
 --- !u!114 &582876638
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -14897,7 +14722,7 @@ MonoBehaviour:
   sayDialog: {fileID: 1192708780}
 --- !u!114 &582876643
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -14942,7 +14767,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &582876644
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -14987,7 +14812,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &582876645
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -15032,7 +14857,7 @@ MonoBehaviour:
   callMode: 0
 --- !u!114 &582876646
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
@@ -15070,6 +14895,124 @@ MonoBehaviour:
       vector2Value: {x: 0, y: 0}
       vector3Value: {x: 0, y: 0, z: 0}
     variableKey: CurrentBlock
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &582876647
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582876233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 593
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1745004950}
+  targetComponentAssemblyName: Effects, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Effects
+  targetMethod: MoveProgressHeart
+  targetMethodText: 'MoveProgressHeart (Int32): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Int32
+      intValue: 3
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &582876648
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582876233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 595
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 1745004950}
+  targetComponentAssemblyName: Effects, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: Effects
+  targetMethod: MoveProgressHeart
+  targetMethodText: 'MoveProgressHeart (Int32): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.Int32
+      intValue: 2
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: 
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &582876649
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582876233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 596
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 292599008}
+  targetComponentAssemblyName: GameFlow, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: GameFlow
+  targetMethod: PatchyTopicChange
+  targetMethodText: 'PatchyTopicChange (): Void'
+  methodParameters: []
   saveReturnValue: 0
   returnValueVariableKey: 
   returnValueType: System.Void
