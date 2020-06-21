@@ -18,7 +18,6 @@ public class GameFlow : MonoBehaviour
         flowChart.SetStringVariable("NextBlock", topic);
         flowChart.SetBooleanVariable("PatchyInitiated", false);
         flowChart.SetBooleanVariable("ConfessionZone", false);
-        flowChart.SetBooleanVariable("TopicWinddown", false);
         // if (flowChart.GetStringVariable("CurrentBlock").Equals("Becoming a Youkai (Real Talk)")
         //     || flowChart.GetStringVariable("CurrentBlock").Equals("Magic (Real Talk)")) {
         //     effects.MoveProgressHeart(2);
@@ -39,6 +38,7 @@ public class GameFlow : MonoBehaviour
                 flowChart.SetStringVariable("CurrentBlock", nextBlock);
                 flowChart.SetStringVariable("NextBlock", "Empty");
                 flowChart.SetStringVariable("BadTransition", "Already Talked About");
+                flowChart.SetBooleanVariable("TopicWinddown", false);
             }
             else if (!flowChart.GetBooleanVariable("TopicWinddown"))
             {
@@ -47,6 +47,7 @@ public class GameFlow : MonoBehaviour
                 flowChart.SetStringVariable("CurrentBlock", nextBlock);
                 flowChart.SetStringVariable("BadTransition", "Abrupt Topic Change");
                 flowChart.SetStringVariable("NextBlock", "Empty");
+                flowChart.SetBooleanVariable("TopicWinddown", false);
             } else if (nextBlock.Equals("Youkai Confession") || nextBlock.Equals("Magic Confession") || nextBlock.Equals("Fail Confession"))
             {
                 flowChart.SetStringVariable("NextBlock", "Empty");
@@ -56,6 +57,7 @@ public class GameFlow : MonoBehaviour
                 SetThingsLeftText(flowChart.GetIntegerVariable("ChancesLeft"));
                 flowChart.SetStringVariable("CurrentBlock", nextBlock);
                 flowChart.SetStringVariable("NextBlock", "Empty");
+                flowChart.SetBooleanVariable("TopicWinddown", false);
 
                 TopicManager.instance.ActivateTopicRoll();
             }
@@ -129,5 +131,10 @@ public class GameFlow : MonoBehaviour
     public void DestroyAudioSource()
     {
         Destroy(GameObject.FindGameObjectWithTag("AudioSource"));
+    }
+
+    public string GetFlowchartCurrentBlock()
+    {
+        return flowChart.GetStringVariable("CurrentBlock");
     }
 }

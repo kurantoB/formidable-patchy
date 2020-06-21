@@ -27,6 +27,8 @@ public class TopicManager : MonoBehaviour
 
     private bool isSame = false;
 
+    public GameFlow gameFlow;
+
     private void Awake()
     {
         if (instance == null)
@@ -62,7 +64,9 @@ public class TopicManager : MonoBehaviour
             if (topicTimeLeft <= 0)
             {
                 // Instantiate random GameObjects in array, set parent to canvas so it'll render
-                spawnedTopic = Instantiate(availableTopics[UnityEngine.Random.Range(0, availableTopics.Count)], new Vector3 (200,200,0), Quaternion.identity, parentCanvas.transform);
+                GameObject tentativeTopic;
+                while ((tentativeTopic = availableTopics[UnityEngine.Random.Range(0, availableTopics.Count)]).GetComponent<TopicButton>().goToTopic.Equals(gameFlow.GetFlowchartCurrentBlock()));
+                spawnedTopic = Instantiate(tentativeTopic, new Vector3 (200,200,0), Quaternion.identity, parentCanvas.transform);
                 spawnedTopic.SetActive(true);
                 // Reset timer
                 topicTimeLeft = topicSpawnTime;
@@ -72,7 +76,7 @@ public class TopicManager : MonoBehaviour
 
     // Keeps track of all topics player has visited
     public void Visited(string topicName){
-        
+        visitedTopics.Add(topicName);
     }
 
     // Checks if topic has been visited before by comparing topics with list of visited topics
@@ -87,7 +91,6 @@ public class TopicManager : MonoBehaviour
             }
             // return if topic has not been visited
             Debug.Log(topic + " is a new topic");
-            visitedTopics.Add(topic);
             return false;
     }
 

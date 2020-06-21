@@ -809,6 +809,7 @@ MonoBehaviour:
   visitedTopics: []
   magicProgress: 0
   youkaiProgress: 0
+  gameFlow: {fileID: 292599009}
 --- !u!4 &197324630
 Transform:
   m_ObjectHideFlags: 0
@@ -1458,6 +1459,7 @@ MonoBehaviour:
   manualText: {fileID: 0}
   manualNextButton: {fileID: 0}
   fadeTexture: {fileID: 2800000, guid: ea68563d28a2f0249983fe32ff2f26b7, type: 3}
+  changedPrologueBg: {fileID: 0}
 --- !u!1 &361564238
 GameObject:
   m_ObjectHideFlags: 0
@@ -2196,6 +2198,16 @@ GameObject:
   - component: {fileID: 582876648}
   - component: {fileID: 582876649}
   - component: {fileID: 582876395}
+  - component: {fileID: 582876653}
+  - component: {fileID: 582876652}
+  - component: {fileID: 582876651}
+  - component: {fileID: 582876650}
+  - component: {fileID: 582876617}
+  - component: {fileID: 582876603}
+  - component: {fileID: 582876602}
+  - component: {fileID: 582876397}
+  - component: {fileID: 582876396}
+  - component: {fileID: 582876654}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2216,11 +2228,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   version: 1
-  scrollPos: {x: 178.46465, y: 39.163315}
+  scrollPos: {x: 116.42401, y: -156.44846}
   variablesScrollPos: {x: 0, y: 0}
   variablesExpanded: 1
   blockViewHeight: 516
-  zoom: 0.6399997
+  zoom: 0.5799997
   scrollViewRect:
     serializedVersion: 2
     x: -343
@@ -2228,9 +2240,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 582876354}
+  - {fileID: 582876565}
   selectedCommands:
-  - {fileID: 582876622}
+  - {fileID: 582876396}
   variables:
   - {fileID: 582876239}
   - {fileID: 582876238}
@@ -2342,7 +2354,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 31.479115
     y: 176.55324
-    width: 150.00005
+    width: 160.34488
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -2375,6 +2387,7 @@ MonoBehaviour:
   - {fileID: 582876245}
   - {fileID: 582876363}
   - {fileID: 582876645}
+  - {fileID: 582876651}
   - {fileID: 582876244}
   - {fileID: 582876243}
   - {fileID: 582876242}
@@ -4282,7 +4295,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 13.321249
     y: 117.509735
-    width: 170.31256
+    width: 175.86214
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -4325,6 +4338,7 @@ MonoBehaviour:
   - {fileID: 582876274}
   - {fileID: 582876362}
   - {fileID: 582876646}
+  - {fileID: 582876652}
   - {fileID: 582876273}
   - {fileID: 582876272}
   - {fileID: 582876271}
@@ -5870,7 +5884,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 204.61633
     y: 1.5774422
-    width: 129.68753
+    width: 129.3104
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -5954,6 +5968,7 @@ MonoBehaviour:
   - {fileID: 582876328}
   - {fileID: 582876356}
   - {fileID: 582876622}
+  - {fileID: 582876653}
   - {fileID: 582876327}
   - {fileID: 582876326}
   - {fileID: 582876325}
@@ -6155,7 +6170,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 504.36932
     y: 167.77142
-    width: 164.06256
+    width: 172.41385
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6166,6 +6181,7 @@ MonoBehaviour:
   commandList:
   - {fileID: 582876365}
   - {fileID: 582876364}
+  - {fileID: 582876654}
   - {fileID: 582876366}
   suppressAllAutoSelections: 0
 --- !u!114 &582876362
@@ -6480,7 +6496,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 505.44543
     y: 220.13881
-    width: 162.50006
+    width: 168.96558
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6509,7 +6525,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 356.1985
     y: 2.3476257
-    width: 120.31253
+    width: 124.13797
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -6969,7 +6985,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 299.28812
     y: 204.78581
-    width: 165.62506
+    width: 170.68973
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -7275,6 +7291,96 @@ MonoBehaviour:
   vector3Data:
     vector3Ref: {fileID: 0}
     vector3Val: {x: 0, y: 0, z: 0}
+--- !u!114 &582876396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582876233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 606
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 197324628}
+  targetComponentAssemblyName: TopicManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: TopicManager
+  targetMethod: Visited
+  targetMethodText: 'Visited (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: CurrentBlock
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &582876397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582876233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 605
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 197324628}
+  targetComponentAssemblyName: TopicManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: TopicManager
+  targetMethod: Visited
+  targetMethodText: 'Visited (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: CurrentBlock
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &582876398
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -8273,7 +8379,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: -38.335537
     y: 226.10222
-    width: 212.50008
+    width: 225.86217
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8317,6 +8423,7 @@ MonoBehaviour:
   - {fileID: 582876401}
   - {fileID: 582876435}
   - {fileID: 582876426}
+  - {fileID: 582876650}
   - {fileID: 582876434}
   - {fileID: 582876433}
   - {fileID: 582876432}
@@ -8543,7 +8650,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 314.45532
     y: 302.98288
-    width: 150.00005
+    width: 153.44833
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8949,7 +9056,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 31.196287
     y: 285.6862
-    width: 148.43755
+    width: 151.72418
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -8986,6 +9093,7 @@ MonoBehaviour:
   - {fileID: 582876458}
   - {fileID: 582876457}
   - {fileID: 582876644}
+  - {fileID: 582876617}
   - {fileID: 582876456}
   - {fileID: 582876455}
   - {fileID: 582876454}
@@ -9910,7 +10018,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 36.41091
     y: 405.14548
-    width: 146.87505
+    width: 144.82764
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -9943,6 +10051,7 @@ MonoBehaviour:
   - {fileID: 582876528}
   - {fileID: 582876486}
   - {fileID: 582876638}
+  - {fileID: 582876602}
   - {fileID: 582876527}
   - {fileID: 582876526}
   - {fileID: 582876525}
@@ -11149,6 +11258,7 @@ MonoBehaviour:
   - {fileID: 582876503}
   - {fileID: 582876511}
   - {fileID: 582876643}
+  - {fileID: 582876603}
   - {fileID: 582876502}
   - {fileID: 582876501}
   - {fileID: 582876500}
@@ -11511,7 +11621,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 48.248844
     y: 465.3924
-    width: 129.68753
+    width: 132.75867
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -11544,6 +11654,7 @@ MonoBehaviour:
   - {fileID: 582876542}
   - {fileID: 582876541}
   - {fileID: 582876634}
+  - {fileID: 582876397}
   - {fileID: 582876540}
   - {fileID: 582876539}
   - {fileID: 582876536}
@@ -12360,7 +12471,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 34.054375
     y: 531.0425
-    width: 145.31255
+    width: 150.00006
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -12389,6 +12500,7 @@ MonoBehaviour:
   - {fileID: 582876584}
   - {fileID: 582876583}
   - {fileID: 582876569}
+  - {fileID: 582876396}
   - {fileID: 582876582}
   - {fileID: 582876581}
   - {fileID: 582876627}
@@ -13168,7 +13280,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 314.39502
     y: 362.15036
-    width: 146.87505
+    width: 148.27591
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -13532,6 +13644,96 @@ MonoBehaviour:
   waitForVO: 0
   setSayDialog: {fileID: 0}
   expression: 0
+--- !u!114 &582876602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582876233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 604
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 197324628}
+  targetComponentAssemblyName: TopicManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: TopicManager
+  targetMethod: Visited
+  targetMethodText: 'Visited (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: CurrentBlock
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &582876603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582876233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 603
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 197324628}
+  targetComponentAssemblyName: TopicManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: TopicManager
+  targetMethod: Visited
+  targetMethodText: 'Visited (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: CurrentBlock
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &582876604
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -13704,7 +13906,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 319.4815
     y: 419.23175
-    width: 132.81253
+    width: 134.4828
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -14001,6 +14203,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemId: 550
   indentLevel: 0
+--- !u!114 &582876617
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582876233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 602
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 197324628}
+  targetComponentAssemblyName: TopicManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: TopicManager
+  targetMethod: Visited
+  targetMethodText: 'Visited (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: CurrentBlock
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
 --- !u!114 &582876618
 MonoBehaviour:
   m_ObjectHideFlags: 2
@@ -14355,7 +14602,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 320.90247
     y: 253.20667
-    width: 125.00004
+    width: 125.86211
     height: 40
   tint: {r: 1, g: 1, b: 1, a: 1}
   useCustomTint: 0
@@ -15070,6 +15317,204 @@ MonoBehaviour:
   returnValueType: System.Void
   showInherited: 0
   callMode: 0
+--- !u!114 &582876650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582876233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 601
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 197324628}
+  targetComponentAssemblyName: TopicManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: TopicManager
+  targetMethod: Visited
+  targetMethodText: 'Visited (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: CurrentBlock
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &582876651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582876233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 600
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 197324628}
+  targetComponentAssemblyName: TopicManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: TopicManager
+  targetMethod: Visited
+  targetMethodText: 'Visited (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: CurrentBlock
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &582876652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582876233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 599
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 197324628}
+  targetComponentAssemblyName: TopicManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: TopicManager
+  targetMethod: Visited
+  targetMethodText: 'Visited (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: CurrentBlock
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &582876653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582876233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 688e35811870d403f9e2b1ab2a699d98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 598
+  indentLevel: 0
+  description: 
+  targetObject: {fileID: 197324628}
+  targetComponentAssemblyName: TopicManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+    PublicKeyToken=null
+  targetComponentFullname: UnityEngine.Component[]
+  targetComponentText: TopicManager
+  targetMethod: Visited
+  targetMethodText: 'Visited (String): Void'
+  methodParameters:
+  - objValue:
+      typeAssemblyname: System.String, mscorlib, Version=4.0.0.0, Culture=neutral,
+        PublicKeyToken=b77a5c561934e089
+      typeFullname: System.String
+      intValue: 0
+      boolValue: 0
+      floatValue: 0
+      stringValue: 
+      colorValue: {r: 0, g: 0, b: 0, a: 0}
+      gameObjectValue: {fileID: 0}
+      materialValue: {fileID: 0}
+      objectValue: {fileID: 0}
+      spriteValue: {fileID: 0}
+      textureValue: {fileID: 0}
+      vector2Value: {x: 0, y: 0}
+      vector3Value: {x: 0, y: 0, z: 0}
+    variableKey: CurrentBlock
+  saveReturnValue: 0
+  returnValueVariableKey: 
+  returnValueType: System.Void
+  showInherited: 0
+  callMode: 0
+--- !u!114 &582876654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582876233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d52ce2dfbc0b4dc4aa04334fc76695e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 607
+  indentLevel: 0
+  flowchart: {fileID: 0}
+  blockName:
+    stringRef: {fileID: 582876237}
+    stringVal: 
 --- !u!1 &588266375
 GameObject:
   m_ObjectHideFlags: 0
