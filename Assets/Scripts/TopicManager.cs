@@ -8,7 +8,7 @@ public class TopicManager : MonoBehaviour
     public static TopicManager instance;
     // Array with all topic GameObjects that can spawn
     // Uhh I was too lazy to prevent spawning of Real talk topics, so I just made a separate array for topics Patchouli can say
-    public List<GameObject> availableTopics, patchyTopics;
+    public List<GameObject> availableTopics, patchyTopics, casualTopics;
     public GameObject[] realTalkTopics;
 
     public float topicSpawnTime;
@@ -134,18 +134,66 @@ public class TopicManager : MonoBehaviour
             case "Subterranean Animism":
                 Debug.Log("Progress made");
                 youkaiProgress++;
+                if(youkaiProgress == 2){
+                    if(!availableTopics.Contains(realTalkTopics[0])){
+                        Debug.Log("Player has visited SA + Flandre, enabling Youkai (Real Talk");
+                        // Assumes index of casual topic and removes it from spawning, 
+                        availableTopics.Remove(casualTopics[0]);
+                        // Assumes index of real topic and adds it to spawning list
+                        availableTopics.Add(realTalkTopics[0]);
+                        
+                        
+                        /*
+                        THERE'S GOTTA BE A BETTER WAY THAN JUST ASSUMING THE INDEX
+                        LOOK INTO REMOVING AND ADDING GAMEOBJECTS FROM A LIST BY NAME
+                        It works at the moment as long as the index of the topics aren't switched
+                        */
+                    }
+
+                }
                 break;
             case "Flandre":
                 Debug.Log("Progress made");
                 youkaiProgress++;
+                if(youkaiProgress == 2){
+                    if(!availableTopics.Contains(realTalkTopics[0])){
+                        Debug.Log("Player has visited SA + Flandre, enabling Youkai (Real Talk");
+                        // Assumes index of casual topic and removes it from spawning, 
+                        availableTopics.Remove(casualTopics[0]);
+                        // Assumes index of real topic and adds it to spawning list
+                        availableTopics.Add(realTalkTopics[0]);
+                        
+                        
+                        /*
+                        THERE'S GOTTA BE A BETTER WAY THAN JUST ASSUMING THE INDEX
+                        LOOK INTO REMOVING AND ADDING GAMEOBJECTS FROM A LIST BY NAME
+                        It works at the moment as long as the index of the topics aren't switched
+                        */
+                    }
+
+                }
                 break;
             case "Marisa's Grimoire":
                 Debug.Log("Progress made");
                 magicProgress++;
+                if(magicProgress == 2){
+                    if(!availableTopics.Contains(realTalkTopics[1])){
+                        Debug.Log("Player has visited Grimoire + Health, enabling Magic (Real Talk");
+                        availableTopics.Remove(casualTopics[1]);
+                        availableTopics.Add(realTalkTopics[1]);
+                    }
+                }  
                 break;
             case "Patchouli's Health":
                 Debug.Log("Progress made");
                 magicProgress++;
+                if(magicProgress == 2){
+                    if(!availableTopics.Contains(realTalkTopics[1])){
+                        Debug.Log("Player has visited Grimoire + Health, enabling Magic (Real Talk");
+                        availableTopics.Remove(casualTopics[1]);
+                        availableTopics.Add(realTalkTopics[1]);
+                    }
+                }  
                 break;
             case "Becoming a Youkai (Real Talk)":
                 Debug.Log("Progress made");
@@ -160,35 +208,41 @@ public class TopicManager : MonoBehaviour
             break;
         }
 
-        if(youkaiProgress >= magicProgress){          
-                if(youkaiProgress == 2){
-                    if(!availableTopics.Contains(realTalkTopics[0])){
-                        Debug.Log("Player has visited SA + Flandre, enabling Youkai (Real Talk");
-                        // Assumes index of casual topic and removes it from spawning, 
-                        availableTopics.RemoveAt(0);
-                        // Assumes index of real topic and adds it to spawning list
-                        availableTopics.Add(realTalkTopics[0]);
-                        
-                        
-                        /*
-                        THERE'S GOTTA BE A BETTER WAY THAN JUST ASSUMING THE INDEX
-                        LOOK INTO REMOVING AND ADDING GAMEOBJECTS FROM A LIST BY NAME
-                        It works at the moment as long as the index of the topics aren't switched
-                        */
-                    }
-
-                }
+        if(youkaiProgress > magicProgress){
             return youkaiProgress;
         }else{
-            if(magicProgress == 2){
-                if(!availableTopics.Contains(realTalkTopics[1])){
-                    Debug.Log("Player has visited Grimoire + Health, enabling Magic (Real Talk");
-                    availableTopics.RemoveAt(1);
-                    availableTopics.Add(realTalkTopics[1]);
-                }
-            }  
             return magicProgress;
         }
-        return 0;
+        // if(youkaiProgress > magicProgress){          
+        //         if(youkaiProgress == 2){
+        //             if(!availableTopics.Contains(realTalkTopics[0])){
+        //                 Debug.Log("Player has visited SA + Flandre, enabling Youkai (Real Talk");
+        //                 // Assumes index of casual topic and removes it from spawning, 
+        //                 availableTopics.RemoveAt(0);
+        //                 // Assumes index of real topic and adds it to spawning list
+        //                 availableTopics.Add(realTalkTopics[0]);
+                        
+                        
+        //                 /*
+        //                 THERE'S GOTTA BE A BETTER WAY THAN JUST ASSUMING THE INDEX
+        //                 LOOK INTO REMOVING AND ADDING GAMEOBJECTS FROM A LIST BY NAME
+        //                 It works at the moment as long as the index of the topics aren't switched
+        //                 */
+        //             }
+
+        //         }
+        //     return youkaiProgress;
+        // }else{
+        //     if(magicProgress == 2){
+        //         if(!availableTopics.Contains(realTalkTopics[1])){
+        //             Debug.Log("Player has visited Grimoire + Health, enabling Magic (Real Talk");
+        //             availableTopics.RemoveAt(1);
+        //             availableTopics.Add(realTalkTopics[1]);
+        //         }
+        //     }  
+        //     return magicProgress;
+        // }
     }
+
+    
 }

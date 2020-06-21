@@ -63,7 +63,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Magic (Real)
+  m_text: 'Magic
 
 '
   m_isRightToLeft: 0
@@ -247,6 +247,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   goToTopic: Magic (Real Talk)
+  SFXPlayer: {fileID: 0}
 --- !u!114 &3535235306558177832
 MonoBehaviour:
   m_ObjectHideFlags: 0
