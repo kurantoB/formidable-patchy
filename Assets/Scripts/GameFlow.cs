@@ -42,7 +42,6 @@ public class GameFlow : MonoBehaviour
             }
             else if (!flowChart.GetBooleanVariable("TopicWinddown"))
             {
-                CheckProgress(nextBlock);
                 flowChart.SetIntegerVariable("ChancesLeft", Mathf.Max(0, flowChart.GetIntegerVariable("ChancesLeft") - 2));
                 SetThingsLeftText(flowChart.GetIntegerVariable("ChancesLeft"));
                 flowChart.SetStringVariable("CurrentBlock", nextBlock);
@@ -52,7 +51,6 @@ public class GameFlow : MonoBehaviour
             {
                 flowChart.SetStringVariable("NextBlock", "Empty");
             } else {
-                CheckProgress(nextBlock);
                 // good transition
                 flowChart.SetIntegerVariable("ChancesLeft", Mathf.Max(0, flowChart.GetIntegerVariable("ChancesLeft") - 1));
                 SetThingsLeftText(flowChart.GetIntegerVariable("ChancesLeft"));

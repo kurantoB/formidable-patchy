@@ -42,7 +42,7 @@ public class Effects : MonoBehaviour
         }
         if (heartTransition)
         {
-            Debug.Log("Heart x: " + progressHeart.localPosition.x);
+            //Debug.Log("Heart x: " + progressHeart.localPosition.x);
             heartTimeElapsed += Time.deltaTime;
             if (heartTimeElapsed >= 0.3f)
             {
@@ -73,7 +73,7 @@ public class Effects : MonoBehaviour
     public void MoveProgressHeart(int stage)
     {
         heartStartPosition = progressHeart.localPosition.x;
-        Debug.Log("Heart x: " + progressHeart.localPosition.x);
+        //Debug.Log("Heart x: " + progressHeart.localPosition.x);
         switch (stage)
         {
             case 0:

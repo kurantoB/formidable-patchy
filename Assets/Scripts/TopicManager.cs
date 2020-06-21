@@ -7,7 +7,8 @@ public class TopicManager : MonoBehaviour
 {
     public static TopicManager instance;
     // Array with all topic GameObjects that can spawn
-    public List<GameObject> availableTopics;
+    // Uhh I was too lazy to prevent spawning of Real talk topics, so I just made a separate array for topics Patchouli can say
+    public List<GameObject> availableTopics, patchyTopics;
     public GameObject[] realTalkTopics;
 
     public float topicSpawnTime;
@@ -93,8 +94,6 @@ public class TopicManager : MonoBehaviour
     // Clear the scrolling topic list
     public void ClearTopicRoll()
     {
-        Debug.Log("clear topics");
-
         foreach (GameObject topic in GameObject.FindGameObjectsWithTag("TopicButton")){
             Destroy(topic);
         }
@@ -104,14 +103,26 @@ public class TopicManager : MonoBehaviour
     // Activate the scrolling topic list
     public void ActivateTopicRoll()
     {
-        Debug.Log("activate topic roll");
         spawningTopics = true;
     }
 
     public string GetNextTopic()
     {
+        string nextTopic = patchyTopics[UnityEngine.Random.Range(0, 7)].name;
+        bool isOldTopic = true;
+
+            if(IsAlreadyVisited(nextTopic)){
+                    Debug.Log(nextTopic + " was picked, old topic");
+                    nextTopic = GetNextTopic();
+            }else{
+                if(nextTopic == "Magic Real" || nextTopic == "Becoming a Youkai Real"){
+                    Debug.Log(nextTopic + " was picked, but Patchy can't choose it");
+                    nextTopic = GetNextTopic();
+                }
+                    isOldTopic = false;
+            }
         // topic initiated by Patchy - can't be already visited, can't be real-talk
-        return "Becoming a Youkai"; // placeholder
+        return nextTopic;
     }
 
     internal int GetProgress(string newTopic)
@@ -148,74 +159,33 @@ public class TopicManager : MonoBehaviour
 
         if(youkaiProgress >= magicProgress){          
                 if(youkaiProgress == 2){
-                    Debug.Log("Player has visited SA + Flandre, enabling Youkai (Real Talk");
-                    // Assumes index of casual topic and removes it from spawning, 
-                    availableTopics.RemoveAt(0);
-                    // Assumes index of real topic and adds it to spawning list
-                    availableTopics.Add(realTalkTopics[0]);
-                    
-                    
-                    /*
-                    THERE'S GOTTA BE A BETTER WAY THAN JUST ASSUMING THE INDEX
-                    LOOK INTO REMOVING AND ADDING GAMEOBJECTS FROM A LIST BY NAME
-                    It works at the moment as long as the index of the topics aren't switched
-                    */
+                    if(!availableTopics.Contains(realTalkTopics[0])){
+                        Debug.Log("Player has visited SA + Flandre, enabling Youkai (Real Talk");
+                        // Assumes index of casual topic and removes it from spawning, 
+                        availableTopics.RemoveAt(0);
+                        // Assumes index of real topic and adds it to spawning list
+                        availableTopics.Add(realTalkTopics[0]);
+                        
+                        
+                        /*
+                        THERE'S GOTTA BE A BETTER WAY THAN JUST ASSUMING THE INDEX
+                        LOOK INTO REMOVING AND ADDING GAMEOBJECTS FROM A LIST BY NAME
+                        It works at the moment as long as the index of the topics aren't switched
+                        */
+                    }
+
                 }
             return youkaiProgress;
         }else{
             if(magicProgress == 2){
-                Debug.Log("Player has visited Grimoire + Health, enabling Magic (Real Talk");
-                availableTopics.RemoveAt(1);
-                availableTopics.Add(realTalkTopics[1]);
+                if(!availableTopics.Contains(realTalkTopics[1])){
+                    Debug.Log("Player has visited Grimoire + Health, enabling Magic (Real Talk");
+                    availableTopics.RemoveAt(1);
+                    availableTopics.Add(realTalkTopics[1]);
+                }
             }  
             return magicProgress;
         }
         return 0;
     }
-
-    // public void CheckProgress(string topic){
-    //     switch(topic){
-    //         case "Subterranean Animism":
-    //             Debug.Log("Progress made");
-    //             youkaiProgress++;
-    //             break;
-    //         case "Flandre":
-    //             Debug.Log("Progress made");
-    //             youkaiProgress++;
-    //             break;
-    //         case "Marisa's Grimoire":
-    //             Debug.Log("Progress made");
-    //             magicProgress++;
-    //             break;
-    //         case "Patchouli's Health":
-    //             Debug.Log("Progress made");
-    //             youkaiProgress++;
-    //             break;
-    //         case "Becoming a Youkai (Real Talk)":
-    //             Debug.Log("Progress made");
-    //             magicProgress++;
-    //         default:
-    //             Debug.Log("No progress made");
-    //         break;
-    //     }
-
-    //     if(youkaiProgress == 2){
-    //         Debug.Log("Player has visited SA + Flandre, enabling Youkai (Real Talk");
-    //         // Assumes index of casual topic and removes it from spawning, 
-    //         availableTopics.RemoveAt(0);
-    //         // Assumes index of real topic and adds it to spawning list
-    //         availableTopics.Add(realTalkTopics[0]);
-
-    //         /*
-    //         THERE'S GOTTA BE A BETTER WAY THAN JUST ASSUMING THE INDEX
-    //         LOOK INTO REMOVING AND ADDING GAMEOBJECTS FROM A LIST BY NAME
-    //         It works at the moment as long as the index of the topics aren't switched
-    //         */
-    //     }
-    //     if(magicProgress == 2){
-    //         Debug.Log("Player has visited Grimoire + Health, enabling Magic (Real Talk");
-    //         availableTopics.RemoveAt(1);
-    //         availableTopics.Add(realTalkTopics[1]);
-    //     }       
-    // }
 }
