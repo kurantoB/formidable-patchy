@@ -6,14 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Title.unity
+    guid: b42b64d4df710234f8f3a16e7325b65a
+  - enabled: 1
     path: Assets/Scenes/kurantoScene.unity
     guid: ea1b940aa35c65b4bbe0d608cb5e26f3
   - enabled: 1
     path: Assets/Scenes/Credits.unity
     guid: 00f5edbb657f14c46aaa23f69eb09955
-  - enabled: 1
-    path: Assets/Scenes/Title.unity
-    guid: b42b64d4df710234f8f3a16e7325b65a
   - enabled: 1
     path: Assets/Scenes/Prologue.unity
     guid: d3efa7f7017e26b49b6dddf11c0cee4b

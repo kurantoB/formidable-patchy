@@ -413,7 +413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clickMode: 0
   nextClickDelay: 0
-  cancelEnabled: 1
+  cancelEnabled: 0
   ignoreMenuClicks: 1
 --- !u!114 &115027075
 MonoBehaviour:
@@ -2211,6 +2211,7 @@ GameObject:
   - component: {fileID: 582876655}
   - component: {fileID: 582876657}
   - component: {fileID: 582876656}
+  - component: {fileID: 582876659}
   m_Layer: 0
   m_Name: Flowchart
   m_TagString: Untagged
@@ -2243,8 +2244,9 @@ MonoBehaviour:
     width: 1114
     height: 859
   selectedBlocks:
-  - {fileID: 582876438}
-  selectedCommands: []
+  - {fileID: 582876630}
+  selectedCommands:
+  - {fileID: 582876604}
   variables:
   - {fileID: 582876239}
   - {fileID: 582876238}
@@ -14617,6 +14619,7 @@ MonoBehaviour:
   eventHandler: {fileID: 582876637}
   commandList:
   - {fileID: 582876621}
+  - {fileID: 582876659}
   - {fileID: 582876636}
   - {fileID: 582876635}
   - {fileID: 582876605}
@@ -15574,6 +15577,27 @@ MonoBehaviour:
   blockName:
     stringRef: {fileID: 582876237}
     stringVal: 
+--- !u!114 &582876659
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 582876233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d81be3d7e84da460788dccea95a3313a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemId: 613
+  indentLevel: 0
+  _targetGameObject:
+    gameObjectRef: {fileID: 0}
+    gameObjectVal: {fileID: 532732525}
+  destroyInXSeconds:
+    floatRef: {fileID: 0}
+    floatVal: 0
+  targetGameObjectOLD: {fileID: 0}
 --- !u!1 &588266375
 GameObject:
   m_ObjectHideFlags: 0
