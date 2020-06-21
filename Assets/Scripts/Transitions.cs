@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PrologueController : MonoBehaviour
+public class Transitions : MonoBehaviour
 {
     public void LoadGameScene()
     {

@@ -11,7 +11,7 @@ public class SayPatchy : Say
     public PatchyExpression expression;
     public override void OnEnter()
     {
-        character = GameObject.FindGameObjectWithTag("MarisaCharacter").GetComponent<Character>();
+        character = GameObject.FindGameObjectWithTag("PatchyCharacter").GetComponent<Character>();
         portrait = GetMarisaDimPortrait();
         character.SetSayDialog.CharacterImage.CrossFadeAlpha(0.5f, 0.25f, true);
         switch (expression)
