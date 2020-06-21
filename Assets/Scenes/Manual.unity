@@ -561,6 +561,7 @@ MonoBehaviour:
   manualText: {fileID: 1225318328}
   manualNextButton: {fileID: 1492342566}
   fadeTexture: {fileID: 2800000, guid: ea68563d28a2f0249983fe32ff2f26b7, type: 3}
+  changedPrologueBg: {fileID: 0}
 --- !u!4 &1059763731
 Transform:
   m_ObjectHideFlags: 0
