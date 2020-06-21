@@ -126,8 +126,8 @@ public class GameFlow : MonoBehaviour
         SceneManager.LoadScene(scene.name);
     }
 
-    public void LoadCredits()
+    public void DestroyAudioSource()
     {
-        SceneManager.LoadScene("Credits");
+        Destroy(GameObject.FindGameObjectWithTag("AudioSource"));
     }
 }

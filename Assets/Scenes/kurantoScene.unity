@@ -653,7 +653,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 141842404}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 292599011}
+        m_MethodName: ReturnToTitle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 292599009}
+        m_MethodName: DestroyAudioSource
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &141842404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1381,6 +1403,7 @@ GameObject:
   m_Component:
   - component: {fileID: 292599010}
   - component: {fileID: 292599009}
+  - component: {fileID: 292599011}
   m_Layer: 0
   m_Name: GameFlow
   m_TagString: GameFlow
@@ -1418,6 +1441,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &292599011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 292599008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb013e90f31ea304ebc1a741497c5274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manualInstructions: []
+  manualImages: []
+  manualText: {fileID: 0}
+  manualNextButton: {fileID: 0}
+  fadeTexture: {fileID: 2800000, guid: ea68563d28a2f0249983fe32ff2f26b7, type: 3}
 --- !u!1 &361564238
 GameObject:
   m_ObjectHideFlags: 0
@@ -15537,8 +15577,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 292599009}
-        m_MethodName: LoadCredits
+      - m_Target: {fileID: 292599011}
+        m_MethodName: ViewCredits
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16991,6 +17031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bab6d7ad1a2d684b85d4c7578ebf26a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  soundTrack: voile
 --- !u!82 &1559616094
 AudioSource:
   m_ObjectHideFlags: 0

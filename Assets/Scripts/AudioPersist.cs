@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AudioPersist : MonoBehaviour
 {
+    public string soundTrack;
+
     private void Awake()
     {
         if (GameObject.FindGameObjectsWithTag("AudioSource").Length > 1)
