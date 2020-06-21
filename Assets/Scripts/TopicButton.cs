@@ -11,10 +11,13 @@ public class TopicButton : MonoBehaviour
     private float yPos = -95;
     public int speed;
     public string goToTopic;
+    
+    public GameObject SFXPlayer;
     // Start is called before the first frame update
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
+        SFXPlayer = GameObject.FindWithTag("SFXSource");
     }
 
     // Update is called once per frame
@@ -30,5 +33,9 @@ public class TopicButton : MonoBehaviour
 
     public void topicButtonClicked() {
         GameObject.FindGameObjectWithTag("GameFlow").GetComponent<GameFlow>().ChangeTopic(goToTopic);
+
+        if(SFXPlayer != null){
+            SFXPlayer.GetComponent<AudioSource>().Play();
+        }
     }
 }

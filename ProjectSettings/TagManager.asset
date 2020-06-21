@@ -10,6 +10,7 @@ TagManager:
   - TopicButton
   - GameFlow
   - AudioSource
+  - SFXSource
   layers:
   - Default
   - TransparentFX
