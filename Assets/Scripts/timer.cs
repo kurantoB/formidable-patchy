@@ -16,7 +16,7 @@ public class timer : MonoBehaviour
 
     void Update()
     {
-        //timeLeft -= Time.deltaTime;
+        timeLeft -= Time.deltaTime;
         progressCircle.fillAmount = timeLeft / maxTime;
         if (timeLeft >= 0)
         {
