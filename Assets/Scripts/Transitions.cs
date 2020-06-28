@@ -30,6 +30,32 @@ public class Transitions : MonoBehaviour
         }
 
         fadeIn = true;
+
+        if (SceneManager.GetActiveScene().name.Equals("Title"))
+        {
+            if (GameObject.FindObjectOfType<AudioPersist>() != null && !GameObject.FindObjectOfType<AudioPersist>().soundTrack.Equals("springbreeze"))
+            {
+                JSAM.AudioManager.PlayMusic(JSAM.Music.springbreeze);
+                GameObject.FindObjectOfType<AudioPersist>().soundTrack = "springbreeze";
+            }
+
+        }
+        else if (SceneManager.GetActiveScene().name.Equals("Prologue"))
+        {
+            if (GameObject.FindObjectOfType<AudioPersist>() != null && !GameObject.FindObjectOfType<AudioPersist>().soundTrack.Equals("earthspirits"))
+            {
+                JSAM.AudioManager.PlayMusic(JSAM.Music.earthspirits);
+                GameObject.FindObjectOfType<AudioPersist>().soundTrack = "earthspirits";
+            }
+        }
+        else if (SceneManager.GetActiveScene().name.Equals("kurantoScene"))
+        {
+            if (GameObject.FindObjectOfType<AudioPersist>() != null && !GameObject.FindObjectOfType<AudioPersist>().soundTrack.Equals("voile"))
+            {
+                JSAM.AudioManager.PlayMusic(JSAM.Music.voile);
+                GameObject.FindObjectOfType<AudioPersist>().soundTrack = "voile";
+            }
+        }
     }
 
     void Update()
@@ -136,7 +162,6 @@ public class Transitions : MonoBehaviour
     {
         fadeOut = true;
         sceneTransition = () => {
-            Destroy(GameObject.FindGameObjectWithTag("AudioSource"));
             SceneManager.LoadScene("Prologue");
         };
     }
@@ -157,9 +182,10 @@ public class Transitions : MonoBehaviour
     {
         fadeOut = true;
         sceneTransition = () => { SceneManager.LoadScene("Title"); };
-        if (SceneManager.GetActiveScene().name.Equals("Credits") && GameObject.FindGameObjectWithTag("AudioSource").GetComponent<AudioPersist>().soundTrack.Equals("voile"))
-        {
-            Destroy(GameObject.FindGameObjectWithTag("AudioSource"));
-        }
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }

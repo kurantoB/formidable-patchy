@@ -11,13 +11,10 @@ public class TopicButton : MonoBehaviour
     private float yPos = -95;
     public int speed;
     public string goToTopic;
-    
-    public GameObject SFXPlayer;
     // Start is called before the first frame update
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
-        SFXPlayer = GameObject.FindWithTag("SFXSource");
     }
 
     // Update is called once per frame
@@ -32,10 +29,19 @@ public class TopicButton : MonoBehaviour
     }
 
     public void topicButtonClicked() {
-        GameObject.FindGameObjectWithTag("GameFlow").GetComponent<GameFlow>().ChangeTopic(goToTopic);
-
-        if(SFXPlayer != null){
-            SFXPlayer.GetComponent<AudioSource>().Play();
+        if (TopicManager.instance.youkaiProgress == 2
+            && goToTopic.Equals("Becoming a Youkai"))
+        {
+            GameObject.FindGameObjectWithTag("GameFlow").GetComponent<GameFlow>().ChangeTopic("Becoming a Youkai (Real Talk)");
+        } else if (TopicManager.instance.magicProgress == 2
+            && goToTopic.Equals("Magic"))
+        {
+            GameObject.FindGameObjectWithTag("GameFlow").GetComponent<GameFlow>().ChangeTopic("Magic (Real Talk)");
+        } else
+        {
+            GameObject.FindGameObjectWithTag("GameFlow").GetComponent<GameFlow>().ChangeTopic(goToTopic);
         }
+
+        JSAM.AudioManager.PlaySound(JSAM.Sounds.topicchange);
     }
 }

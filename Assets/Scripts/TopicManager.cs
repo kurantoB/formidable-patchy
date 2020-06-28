@@ -155,13 +155,13 @@ public class TopicManager : MonoBehaviour
             case "Flandre":
                 Debug.Log("Progress made");
                 youkaiProgress++;
-                if(youkaiProgress == 2){
+                /*if(youkaiProgress == 2){
                     if(!availableTopics.Contains(realTalkTopics[0])){
                         Debug.Log("Player has visited SA + Flandre, enabling Youkai (Real Talk");
                         // Assumes index of casual topic and removes it from spawning, 
                         availableTopics.Remove(casualTopics[0]);
                         // Assumes index of real topic and adds it to spawning list
-                        availableTopics.Add(realTalkTopics[0]);
+                        availableTopics.Add(realTalkTopics[0]);*/
                         
                         
                         /*
@@ -169,31 +169,31 @@ public class TopicManager : MonoBehaviour
                         LOOK INTO REMOVING AND ADDING GAMEOBJECTS FROM A LIST BY NAME
                         It works at the moment as long as the index of the topics aren't switched
                         */
-                    }
+                    /*}
 
-                }
+                }*/
                 break;
             case "Marisa's Grimoire":
                 Debug.Log("Progress made");
                 magicProgress++;
-                if(magicProgress == 2){
+                /*if(magicProgress == 2){
                     if(!availableTopics.Contains(realTalkTopics[1])){
                         Debug.Log("Player has visited Grimoire + Health, enabling Magic (Real Talk");
                         availableTopics.Remove(casualTopics[1]);
                         availableTopics.Add(realTalkTopics[1]);
                     }
-                }  
+                }  */
                 break;
             case "Patchouli's Health":
                 Debug.Log("Progress made");
                 magicProgress++;
-                if(magicProgress == 2){
+                /*if(magicProgress == 2){
                     if(!availableTopics.Contains(realTalkTopics[1])){
                         Debug.Log("Player has visited Grimoire + Health, enabling Magic (Real Talk");
                         availableTopics.Remove(casualTopics[1]);
                         availableTopics.Add(realTalkTopics[1]);
                     }
-                }  
+                }  */
                 break;
             case "Becoming a Youkai (Real Talk)":
                 Debug.Log("Progress made");

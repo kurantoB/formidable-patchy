@@ -18,10 +18,6 @@ public class GameFlow : MonoBehaviour
         flowChart.SetStringVariable("NextBlock", topic);
         flowChart.SetBooleanVariable("PatchyInitiated", false);
         flowChart.SetBooleanVariable("ConfessionZone", false);
-        // if (flowChart.GetStringVariable("CurrentBlock").Equals("Becoming a Youkai (Real Talk)")
-        //     || flowChart.GetStringVariable("CurrentBlock").Equals("Magic (Real Talk)")) {
-        //     effects.MoveProgressHeart(2);
-        // }
     }
 
     public void HandleContinue(Say sayCommand, BaseContinue bc)
@@ -58,7 +54,6 @@ public class GameFlow : MonoBehaviour
                 flowChart.SetStringVariable("CurrentBlock", nextBlock);
                 flowChart.SetStringVariable("NextBlock", "Empty");
                 flowChart.SetBooleanVariable("TopicWinddown", false);
-
                 TopicManager.instance.ActivateTopicRoll();
             }
         } else {
@@ -90,6 +85,7 @@ public class GameFlow : MonoBehaviour
         flowChart.ExecuteBlock(nextBlock);
         flowChart.SetStringVariable("CurrentBlock", nextBlock);
         flowChart.SetStringVariable("NextBlock", "Empty");
+        flowChart.SetBooleanVariable("TopicWinddown", false);
     }
 
     public void CheckProgress(string newTopic)

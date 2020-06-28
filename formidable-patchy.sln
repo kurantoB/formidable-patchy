@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fungus", "Fungus.csproj", "{0F89321F-92E5-5A7E-F84B-59C3E9831D42}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FungusExamples", "FungusExamples.csproj", "{BCAA8516-B85E-E5EB-7CE8-6D696E02AD18}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{0AAC25ED-0B70-988E-39AA-2457B94C41C6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FungusEditor", "FungusEditor.csproj", "{A10139A3-9B35-0380-B4D1-ED9122168079}"
@@ -27,10 +25,6 @@ Global
 		{0F89321F-92E5-5A7E-F84B-59C3E9831D42}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F89321F-92E5-5A7E-F84B-59C3E9831D42}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F89321F-92E5-5A7E-F84B-59C3E9831D42}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BCAA8516-B85E-E5EB-7CE8-6D696E02AD18}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BCAA8516-B85E-E5EB-7CE8-6D696E02AD18}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BCAA8516-B85E-E5EB-7CE8-6D696E02AD18}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BCAA8516-B85E-E5EB-7CE8-6D696E02AD18}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0AAC25ED-0B70-988E-39AA-2457B94C41C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0AAC25ED-0B70-988E-39AA-2457B94C41C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0AAC25ED-0B70-988E-39AA-2457B94C41C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
